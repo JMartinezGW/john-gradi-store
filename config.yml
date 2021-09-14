@@ -1,0 +1,9 @@
+prod:
+  password: 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
+  theme_id: "127113265329"
+  store: john-gradi-store.myshopify.com
+
+dev:
+  password: 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
+  theme_id: "127149342897"
+  store: john-gradi-store.myshopify.com
