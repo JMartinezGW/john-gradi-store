@@ -37,6 +37,7 @@ for (let i = 0; i < addToCartBtnList.length; i++) {
                 })
             });
         } catch (error) {
+            console.error('error')
             console.error(error)
         }
     });
