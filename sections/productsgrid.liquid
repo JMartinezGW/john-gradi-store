@@ -13,7 +13,7 @@
     <div class="row">
         {% for product in collections['all'].products %}
             <div class="col-md-3 col-xs-12 myproduct">
-                <a href="{{product.url}}" style="myproduct__image">
+                <a href="{{product.url}}" class="myproduct__image">
                     <img id="product-main-{{product.id}}" src="{{ product.media[0] | product_img_url: 'medium' }}">
                 </a>
                 <div class="myproduct__images">
