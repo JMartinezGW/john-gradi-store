@@ -13,7 +13,6 @@
     <div class="row">
         {% for product in collections['all'].products %}
             <div class="col-md-3 col-xs-12 product">
-                <b>{{ product.title }}</b><br>
                 <img id="product-main" src="{{ product.media[0] | product_img_url: 'medium' }}">
                 <div class="myproduct__images">
                     {% for image in product.images %}
@@ -25,6 +24,10 @@
                             &nbsp;
                         </div>
                     {% endfor %}
+                </div>
+                <div class="myproduct__info">
+                    <b>{{ product.title }}</b>
+                    {{ product.price | money }}
                 </div>
             </div>
         {% endfor %}
@@ -57,5 +60,8 @@
 }
 .myproduct__images {
     display: flex;
+}
+.myproduct__info {
+    text-align: center;
 }
 {% endstylesheet %}
