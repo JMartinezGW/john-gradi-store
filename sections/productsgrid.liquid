@@ -15,11 +15,11 @@
             <div class="col-md-3 col-xs-12 product">
                 <b>{{ product.title }}</b><br>
                 <img id="product-main" src="{{ product.media[0] | product_img_url: 'medium' }}">
-                <div class="product__images">
+                <div class="myproduct__images">
                     {% for image in product.images %}
                         <div 
                             style="background-image: url({{ image.src | product_img_url: 'small' }})" 
-                            class="product__box"
+                            class="myproduct__box"
                             imagen="{{ image.src | product_img_url: 'medium' }}"
                         >
                             &nbsp;
@@ -40,23 +40,23 @@
 }
 {% endschema %}
 {% javascript %}
-    document.querySelector('.product__box').addEventListener('mouseover', function (event) {
+    document.querySelector('.myproduct__box').addEventListener('mouseover', function (event) {
         console.log(event)
         console.log(event.target)
         console.log(event.target.attributes.imagen.value)
     });
 {% endjavascript %}
 {% stylesheet %}
-    .product {
-    // your styles
-    }
-    .product__box {
-        width: 40px;
-        height: 40px;
-        background-size: cover;
-        background-position: center;
-    }
-    .product__images {
-        display: flex;
-    }
+.product {
+// your styles
+}
+.myproduct__box {
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    background-position: center;
+}
+.myproduct__images {
+    display: flex;
+}
 {% endstylesheet %}
