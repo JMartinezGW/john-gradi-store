@@ -10,10 +10,7 @@
   </h1>
   <div class="rte">
     {{ page.content }}
-    {% for collection in product.collections %}
-        Hola<br>
-        {{ collection.title }}
-    {% endfor %}
+    {{ collection.all_products_count }}
   </div>
 </div>
 
