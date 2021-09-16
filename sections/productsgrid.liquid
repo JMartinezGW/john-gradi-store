@@ -26,7 +26,7 @@
                             imagen="{{ image.src | product_img_url: 'medium' }}"
                             product="{{product.id}}"
                         >
-                            &nbsp;xxx
+                            &nbsp;
                         </div>
                     {% endfor %}
                 </div>
@@ -67,14 +67,16 @@
     const addToCartBtnList = document.getElementsByClassName('myproduct__btn')
     for (let i = 0; i < addToCartBtnList.length; i++) {
         addToCartBtnList[i].addEventListener('click', function (event) {
-            jQuery.post('/cart/add.js', {
-                items: [
+            const request = await fetch('/cart/add.js', {
+                method: 'POST',
+                body: JSON.stringify(items: [
                   {
                     quantity: 1,
                     id: event.target.attributes.product.value
                   }
-                ]
+                ])
             });
+            console.log(request)
         });
     }
 {% endjavascript %}
