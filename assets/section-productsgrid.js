@@ -22,7 +22,7 @@ for (let i = 0; i < addToCartBtnList.length; i++) {
     addToCartBtnList[i].addEventListener('click', async function (event) {
         const variantId = (productVariant[event.target.attributes.product.value] ? productVariant[event.target.attributes.product.value] : event.target.attributes.variant.value)
         try {
-            const request = fetch('/cart/add.js', {
+            const request = await fetch('/cart/add.js', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
