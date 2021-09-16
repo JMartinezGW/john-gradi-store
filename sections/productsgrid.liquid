@@ -66,7 +66,7 @@
     }
     const addToCartBtnList = document.getElementsByClassName('myproduct__btn')
     for (let i = 0; i < addToCartBtnList.length; i++) {
-        addToCartBtnList[i].addEventListener('click', function (event) {
+        addToCartBtnList[i].addEventListener('click', async function (event) {
             const request = await fetch('/cart/add.js', {
                 method: 'POST',
                 body: JSON.stringify(items: [
