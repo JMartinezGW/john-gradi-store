@@ -41,9 +41,8 @@
 {% endschema %}
 {% javascript %}
     document.querySelector('.myproduct__box').addEventListener('mouseover', function (event) {
-        console.log(event)
-        console.log(event.target)
-        console.log(event.target.attributes.imagen.value)
+        const imagen = event.target.attributes.imagen.value // getting img from attibute html
+        document.getElementById('#product-main').src = imagen
     });
 {% endjavascript %}
 {% stylesheet %}
