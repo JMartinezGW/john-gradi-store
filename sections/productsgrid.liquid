@@ -15,14 +15,16 @@
             <div class="col-md-3 col-xs-12 product">
                 <b>{{ product.title }}</b><br>
                 <img src="{{ product.media[0] | product_img_url: 'medium' }}">
-                {% for image in product.images %}
-                    <div 
-                        style="background-image: url({{ image.src | product_img_url: 'small' }})" 
-                        class="product__box"
-                    >
-                        &nbsp;
-                    </div>
-                {% endfor %}
+                <div class="product__images">
+                    {% for image in product.images %}
+                        <div 
+                            style="background-image: url({{ image.src | product_img_url: 'small' }})" 
+                            class="product__box"
+                        >
+                            &nbsp;
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
         {% endfor %}
     </div>
@@ -45,5 +47,8 @@
     height: 40px;
     background-size: cover;
     background-position: center;
+}
+.product__images {
+    display: flex;
 }
 {% endstylesheet %}
