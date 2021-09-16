@@ -14,7 +14,7 @@
         {% for product in collections['all'].products %}
             <div class="col-md-3 col-xs-12 product">
                 <b>{{ product.title }}</b><br>
-                <img src="{{ product.media[0] | product_img_url: 'medium' }}">
+                <img id="product-main" src="{{ product.media[0] | product_img_url: 'medium' }}">
                 <div class="product__images">
                     {% for image in product.images %}
                         <div 
@@ -38,6 +38,12 @@
   "class": "spaced-section"
 }
 {% endschema %}
+{% javascript %}
+document.querySelector('.product__box').addEventListener('mouseover', function (event) {
+    console.log(event)
+    // document.querySelector('#product-main').src = 
+});
+{% endjavascript %}
 {% stylesheet %}
 .product {
   // your styles
