@@ -20,6 +20,7 @@
                         <div 
                             style="background-image: url({{ image.src | product_img_url: 'small' }})" 
                             class="product__box"
+                            data-imagen="{{ image.src | product_img_url: 'medium' }}"
                         >
                             &nbsp;
                         </div>
@@ -40,7 +41,7 @@
 {% endschema %}
 {% javascript %}
     document.querySelector('.product__box').addEventListener('mouseover', function (event) {
-        console.log(event)
+        console.log(event.target.data-imagen)
     });
 {% endjavascript %}
 {% stylesheet %}
