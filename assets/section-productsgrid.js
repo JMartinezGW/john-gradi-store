@@ -13,6 +13,7 @@ for (let i = 0; i < myProductList.length; i++) {
         const imagen = event.target.attributes.imagen.value // getting img from attibute html
         const productId = event.target.attributes.product.value
         productVariant[productId] = event.target.attributes.variant
+        console.log(productVariant[productId])
         document.getElementById('product-main-' + productId).src = imagen
     });
 }
