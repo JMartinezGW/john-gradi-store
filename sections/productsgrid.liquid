@@ -38,7 +38,7 @@
                         {% endfor %}
                     </b>
                     <br>
-                    <a href="#" onclick="addToCar({{product.id}})" class="myproduct__btn">Add to Cart</a>
+                    <a href="#" product="{{product.id}}" class="myproduct__btn">Add to Cart</a>
                 </div>
             </div>
         {% endfor %}
@@ -62,15 +62,18 @@
             document.getElementById('product-main-' + productId).src = imagen
         });
     }
-    function addToCart (item) {
-        jQuery.post('/cart/add.js', {
-            items: [
-              {
-                quantity: 1,
-                id: itemId
-              }
-            ]
-          });
+    const addToCartBtnList = document.getElementsByClassName('myproduct__btn')
+    for (let i = 0; i < addToCartBtnList.length; i++) {
+        addToCartBtnList[i].addEventListener('click', function (event) {
+            jQuery.post('/cart/add.js', {
+                items: [
+                  {
+                    quantity: 1,
+                    id: event.target.attributes.product.value
+                  }
+                ]
+            });
+        });
     }
 {% endjavascript %}
 {% stylesheet %}
