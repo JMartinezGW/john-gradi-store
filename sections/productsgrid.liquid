@@ -16,7 +16,12 @@
                 <b>{{ product.title }}</b><br>
                 <img src="{{ product.media[0] | product_img_url: 'medium' }}">
                 {% for image in product.images %}
-                    <div style="background: url({{ image.src | product_img_url: 'small' }})" class="product__box"></div>
+                    <div 
+                        style="background-image: url({{ image.src | product_img_url: 'small' }})" 
+                        class="product__box"
+                    >
+                        &nbsp;
+                    </div>
                 {% endfor %}
             </div>
         {% endfor %}
