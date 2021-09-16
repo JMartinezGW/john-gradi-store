@@ -12,8 +12,8 @@
     {{ page.content }}
     <div class="row">
         {% for product in collections['all'].products %}
-            <div class="col-md-3 col-xs-12 product">
-                <a href="{{product.url}}">
+            <div class="col-md-3 col-xs-12 myproduct">
+                <a href="{{product.url}}" style="myproduct__image">
                     <img id="product-main-{{product.id}}" src="{{ product.media[0] | product_img_url: 'medium' }}">
                 </a>
                 <div class="myproduct__images">
@@ -99,6 +99,10 @@
     color: white !important;
     text-decoration: none;
     border-radius: 4px;
+}
+
+.myproduct__image {
+    height: 200px;
 }
 
 {% endstylesheet %}
