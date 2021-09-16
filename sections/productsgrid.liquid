@@ -10,15 +10,9 @@
   </h1>
   <div class="rte">
     {{ page.content }}
-    <select name="id">
-        {% for variant in product.variants %}
-          <option value="{{ variant.id }}"
-            {% if variant == product.selected_or_first_available_variant %}selected="selected"{% endif %}
-          >
-            {{ variant.title }} - {{ variant.price | money }}
-          </option>
-        {% endfor %}
-      </select>
+    {% for collection in product.collections %}
+        {{ collection.title }}
+    {% endfor %}
   </div>
 </div>
 
