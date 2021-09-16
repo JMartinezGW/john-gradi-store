@@ -37,7 +37,7 @@ for (let i = 0; i < addToCartBtnList.length; i++) {
                 })
             });
             if (request.status === 200) {
-                alert('Product added successfully')
+                location.href="/cart"
             } else {
                 alert('Not enough stock')
             }
