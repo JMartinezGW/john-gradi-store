@@ -12,11 +12,11 @@
     {{ page.content }}
     <div class="row">
         {% for product in collections['all'].products %}
-            <div class="col-md-3 col-xs-12">
+            <div class="col-md-3 col-xs-12 product">
                 <b>{{ product.title }}</b><br>
                 <img src="{{ product.media[0] | product_img_url: 'medium' }}">
                 {% for image in product.images %}
-                    <img src="{{ image.src | product_img_url: 'small' }}">
+                    <div style="background: url({{ image.src | product_img_url: 'small' }})" class="product__box"></div>
                 {% endfor %}
             </div>
         {% endfor %}
@@ -31,3 +31,14 @@
   "class": "spaced-section"
 }
 {% endschema %}
+{% stylesheet %}
+.product {
+  // your styles
+}
+.product__box {
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    background-position: center;
+}
+{% endstylesheet %}
