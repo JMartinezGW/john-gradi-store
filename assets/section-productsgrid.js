@@ -23,19 +23,23 @@ for (let i = 0; i < addToCartBtnList.length; i++) {
         const variantId = (productVariant[event.target.attributes.product.value] ? productVariant[event.target.attributes.product.value] : event.target.attributes.variant.value)
         console.log('event.target.attributes.quantity.value')
         console.log(event.target.attributes.quantity.value)
-        const request = await fetch('/cart/add.js', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                items: [
-                    {
-                        quantity: 1,
-                        id: variantId
-                    }
-                ]
-            })
-        });
+        try {
+            await fetch('/cart/add.js', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    items: [
+                        {
+                            quantity: 1,
+                            id: variantId
+                        }
+                    ]
+                })
+            });
+        } catch (error) {
+            console.log(error)
+        }
     });
 }
