@@ -10,8 +10,9 @@
   </h1>
   <div class="rte">
     {{ page.content }}
-    {{ all_products }}
-    products
+    {% for produc in all_products %}
+    {{ produc }}
+    {% endfor %}
     {% for product in products %}
     {{ product }}
     {% endfor %}
