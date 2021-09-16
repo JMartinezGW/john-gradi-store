@@ -69,12 +69,14 @@
         addToCartBtnList[i].addEventListener('click', async function (event) {
             const request = await fetch('/cart/add.js', {
                 method: 'POST',
-                body: JSON.stringify(items: [
-                  {
-                    quantity: 1,
-                    id: event.target.attributes.product.value
-                  }
-                ])
+                body: JSON.stringify({
+                    items: [
+                        {
+                            quantity: 1,
+                            id: event.target.attributes.product.value
+                        }
+                    ]
+                })
             });
             console.log('request')
             console.log(request)
