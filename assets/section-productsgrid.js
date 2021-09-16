@@ -38,11 +38,11 @@ for (let i = 0; i < addToCartBtnList.length; i++) {
             });
             console.log(request)
             console.log(request.status)
-            // if (request.status === 200) {
-            //     alert('Not enough stock')
-            // } else {
-            //     alert('Product added successfully')
-            // }
+            if (request.status === 200) {
+                alert('Not enough stock')
+            } else {
+                alert('Product added successfully')
+            }
         } catch (error) {
             console.log('error')
             console.error(error)
