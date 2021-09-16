@@ -14,7 +14,7 @@
         {% for product in collections['all'].products %}
             <div class="col-md-3 col-xs-12 product">
                 <a href="{{product.url}}">
-                    <img id="product-main" src="{{ product.media[0] | product_img_url: 'medium' }}">
+                    <img id="product-main-{{product.id}}" src="{{ product.media[0] | product_img_url: 'medium' }}">
                 </a>
                 <div class="myproduct__images">
                     {% for image in product.images %}
@@ -22,6 +22,7 @@
                             style="background-image: url({{ image.src | product_img_url: 'small' }})" 
                             class="myproduct__box"
                             imagen="{{ image.src | product_img_url: 'medium' }}"
+                            product="{{product.id}}"
                         >
                             &nbsp;xxx
                         </div>
@@ -57,7 +58,8 @@
     for (let i = 0; i < myProductList.length; i++) {
         myProductList[i].addEventListener('mouseover', function (event) {
             const imagen = event.target.attributes.imagen.value // getting img from attibute html
-            document.getElementById('product-main').src = imagen
+            const productId = event.target.attributes.product.value
+            document.getElementById('product-main-' + productId).src = imagen
         });
     }
     function addToCart (item) {
