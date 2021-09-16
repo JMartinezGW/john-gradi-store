@@ -10,9 +10,12 @@
   </h1>
   <div class="rte">
     {{ page.content }}
+    {{ all_products }}
+    products
     {% for product in products %}
     {{ product }}
     {% endfor %}
+    collection
     {% for collection in product.collections %}
     {{ collection.title }}
     {% endfor %}
