@@ -19,25 +19,31 @@ for (let i = 0; i < myProductList.length; i++) {
 }
 const addToCartBtnList = document.getElementsByClassName('myproduct__btn')
 for (let i = 0; i < addToCartBtnList.length; i++) {
-    addToCartBtnList[i].addEventListener('click', function (event) {
+    addToCartBtnList[i].addEventListener('click', async function (event) {
         const variantId = (productVariant[event.target.attributes.product.value] ? productVariant[event.target.attributes.product.value] : event.target.attributes.variant.value)
-        fetch('/cart/add.js', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                items: [
-                    {
-                        quantity: 1,
-                        id: variantId
-                    }
-                ]
-            })
-        }).then(() => {
-            alert('Product added succesfully')
-        }).catch((error) => {
-            console.log(error)
-        });
+        try {
+            const request = fetch('/cart/add.js', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    items: [
+                        {
+                            quantity: 1,
+                            id: variantId
+                        }
+                    ]
+                })
+            });
+            if (request.status === 200) {
+                alert('Product added successfully')
+            } else {
+                alert('Not enough stock')
+            }
+        } catch (error) {
+            console.log('error')
+            console.error(error)
+        }
     });
 }
