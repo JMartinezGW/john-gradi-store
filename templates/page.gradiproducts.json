@@ -3,7 +3,7 @@
     "main": {
       "type": "productsgrid",
       "settings": {
-        "collection": "frontpage"
+        "collection": "motos"
       }
     }
   },
