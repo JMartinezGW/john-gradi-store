@@ -10,10 +10,9 @@
 
 <div class="page-width page-width--narrow">
   <h1 class="main-page-title page-title h0">
-    {{ page.title | escape }}
+    {{ section.settings.collection.title | escape }}
   </h1>
   <div class="rte">
-    {{ page.content }}
     <div class="row">
         {% for product in section.settings.collection.products %}
             <div class="col-md-3 col-xs-12 myproduct">
