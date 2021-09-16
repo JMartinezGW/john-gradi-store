@@ -39,22 +39,22 @@
 }
 {% endschema %}
 {% javascript %}
-document.querySelector('.product__box').addEventListener('mouseover', function (event) {
-    console.log(event.target.style.backgroundImage)
-    document.querySelector('#product-main').src = '{{ event.target.style.backgroundImage | product_img_url: 'medium' }}'
-});
+    document.querySelector('.product__box').addEventListener('mouseover', function (event) {
+        const image = "{{ event.target.style.backgroundImage | product_img_url: 'medium' }}"
+        document.querySelector('#product-main').src = image
+    });
 {% endjavascript %}
 {% stylesheet %}
-.product {
-  // your styles
-}
-.product__box {
-    width: 40px;
-    height: 40px;
-    background-size: cover;
-    background-position: center;
-}
-.product__images {
-    display: flex;
-}
+    .product {
+    // your styles
+    }
+    .product__box {
+        width: 40px;
+        height: 40px;
+        background-size: cover;
+        background-position: center;
+    }
+    .product__images {
+        display: flex;
+    }
 {% endstylesheet %}
