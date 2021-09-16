@@ -21,8 +21,6 @@ const addToCartBtnList = document.getElementsByClassName('myproduct__btn')
 for (let i = 0; i < addToCartBtnList.length; i++) {
     addToCartBtnList[i].addEventListener('click', async function (event) {
         const variantId = (productVariant[event.target.attributes.product.value] ? productVariant[event.target.attributes.product.value] : event.target.attributes.variant.value)
-        console.log('event.target.attributes.quantity.value')
-        console.log(event.target.attributes.quantity.value)
         try {
             await fetch('/cart/add.js', {
                 method: 'POST',
