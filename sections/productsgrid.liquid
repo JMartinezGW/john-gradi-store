@@ -15,6 +15,9 @@
             <div class="col-md-3 col-xs-12">
                 <b>{{ product.title }}</b><br>
                 <img src="{{ product.media[0] | product_img_url: 'medium' }}">
+                {% for image in product.images %}
+                    <img src="{{ image.src | product_img_url: 'small' }}">
+                {% endfor %}
             </div>
         {% endfor %}
     </div>
