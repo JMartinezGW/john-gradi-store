@@ -37,7 +37,7 @@
                         {% endfor %}
                     </b>
                     <br>
-                    <a href="#" onclick="addToCar()" class="myproduct__btn">Add to Cart</a>
+                    <a href="#" onclick="addToCar({{product.id}})" class="myproduct__btn">Add to Cart</a>
                 </div>
             </div>
         {% endfor %}
@@ -60,8 +60,15 @@
             document.getElementById('product-main').src = imagen
         });
     }
-    function addToCart () {
-        console.log('added')
+    function addToCart (item) {
+        jQuery.post('/cart/add.js', {
+            items: [
+              {
+                quantity: 1,
+                id: itemId
+              }
+            ]
+          });
     }
 {% endjavascript %}
 {% stylesheet %}
