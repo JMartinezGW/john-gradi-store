@@ -1,12 +1,13 @@
 {
-    "name": "Product list",
-    "sections": {
-      "main": {
-        "type": "productsgrid",
-        "settings": {}
+  "sections": {
+    "main": {
+      "type": "productsgrid",
+      "settings": {
+        "collection": "frontpage"
       }
-    },
-    "order": [
-      "main"
-    ]
+    }
+  },
+  "order": [
+    "main"
+  ]
 }
