@@ -14,7 +14,6 @@ for (let i = 0; i < myProductList.length; i++) {
         const price = event.target.attributes.price.value
         productVariant[productId] = event.target.attributes.variant.value
         document.getElementById('product-main-' + productId).src = imagen
-        console.log(price)
         document.getElementById('product-price-' + productId).innerText = price
     });
 }
@@ -38,7 +37,5 @@ for (let i = 0; i < addToCartBtnList.length; i++) {
                 ]
             })
         });
-        console.log('request')
-        console.log(request)
     });
 }
