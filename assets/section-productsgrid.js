@@ -39,9 +39,9 @@ for (let i = 0; i < addToCartBtnList.length; i++) {
             console.log(request)
             console.log(request.status)
             if (request.status === 200) {
-                alert('Not enough stock')
-            } else {
                 alert('Product added successfully')
+            } else {
+                alert('Not enough stock')
             }
         } catch (error) {
             console.log('error')
