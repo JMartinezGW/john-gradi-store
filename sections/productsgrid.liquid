@@ -30,7 +30,7 @@
                             imagen="{{ variant.image.src | product_img_url: 'medium' }}"
                             product="{{product.id}}"
                             variant="{{variant.id}}"
-                            price="{{variant.price}}"
+                            price="{{variant.price | money}}"
                         >
                             &nbsp;
                         </div>
