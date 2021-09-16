@@ -1,0 +1,30 @@
+.myproduct {
+    padding: 7px;
+}
+
+.myproduct__box {
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    background-position: center;
+}
+
+.myproduct__images {
+    display: flex;
+}
+
+.myproduct__info {
+    text-align: center;
+}
+
+.myproduct__btn {
+    padding: 10px 5px;
+    background: black;
+    color: white !important;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.myproduct__image {
+    height: 200px;
+}
