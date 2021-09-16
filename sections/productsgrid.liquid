@@ -18,7 +18,7 @@
                 <div class="product__images">
                     {% for image in product.images %}
                         <div 
-                            style="background-image: url({{ image.src | product_img_url: 'small' }})" 
+                            style="background-image: {{ image.src | product_img_url: 'small' }}" 
                             class="product__box"
                         >
                             &nbsp;
