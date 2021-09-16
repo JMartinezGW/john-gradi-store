@@ -11,8 +11,10 @@ for (let i = 0; i < myProductList.length; i++) {
     myProductList[i].addEventListener('click', function (event) {
         const imagen = event.target.attributes.imagen.value // getting img from attibute html
         const productId = event.target.attributes.product.value
+        const price = event.target.attributes.price.value
         productVariant[productId] = event.target.attributes.variant.value
         document.getElementById('product-main-' + productId).src = imagen
+        document.getElementById('product-price-' + productId).src = price
     });
 }
 const addToCartBtnList = document.getElementsByClassName('myproduct__btn')

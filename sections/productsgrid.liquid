@@ -30,6 +30,7 @@
                             imagen="{{ variant.image.src | product_img_url: 'medium' }}"
                             product="{{product.id}}"
                             variant="{{variant.id}}"
+                            price="{{variant.price}}"
                         >
                             &nbsp;
                         </div>
@@ -37,7 +38,7 @@
                 </div>
                 <div class="myproduct__info">
                     <b>{{ product.title }}</b><br>
-                    {{ product.price | money }}<br>
+                    <p id="product-price-{{product.id}}">{{ product.price | money }}</p><br>
                     <b>
                         Variants: 
                         {% for variant in product.variants %}
