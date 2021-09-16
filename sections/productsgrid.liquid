@@ -37,8 +37,8 @@
                     {% endfor %}
                 </div>
                 <div class="myproduct__info">
-                    <b>{{ product.title }}</b><br>
-                    <p id="product-price-{{product.id}}">{{ product.price | money }}</p><br>
+                    <b>{{ product.title }}</b>
+                    <p id="product-price-{{product.id}}">{{ product.price | money }}</p>
                     <b>
                         Variants: 
                         {% for variant in product.variants %}
