@@ -41,7 +41,7 @@
 {% javascript %}
 document.querySelector('.product__box').addEventListener('mouseover', function (event) {
     console.log(event.target.style.backgroundImage)
-    document.querySelector('#product-main').src = "{{ event.target.style.backgroundImage | product_img_url: 'medium' }}"
+    document.querySelector('#product-main').src = '{{ event.target.style.backgroundImage | product_img_url: 'medium' }}'
 });
 {% endjavascript %}
 {% stylesheet %}
