@@ -19,28 +19,25 @@ for (let i = 0; i < myProductList.length; i++) {
 }
 const addToCartBtnList = document.getElementsByClassName('myproduct__btn')
 for (let i = 0; i < addToCartBtnList.length; i++) {
-    addToCartBtnList[i].addEventListener('click', async function (event) {
+    addToCartBtnList[i].addEventListener('click', function (event) {
         const variantId = (productVariant[event.target.attributes.product.value] ? productVariant[event.target.attributes.product.value] : event.target.attributes.variant.value)
-        try {
-            const request = await fetch('/cart/add.js', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    items: [
-                        {
-                            quantity: 1,
-                            id: variantId
-                        }
-                    ]
-                })
-            });
-            console.log(request)
-        } catch (error) {
-            console.log('error')
-            console.error(error)
-            console.log(error.response.data)
-        }
+        fetch('/cart/add.js', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                items: [
+                    {
+                        quantity: 1,
+                        id: variantId
+                    }
+                ]
+            })
+        }).then(() => {
+            alert('Product added succesfully')
+        }).catch((error) => {
+            console.log(error)
+        });
     });
 }
