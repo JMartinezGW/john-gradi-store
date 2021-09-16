@@ -1,8 +1,18 @@
 const myProductList = document.getElementsByClassName('myproduct__box')
+let productVariant = {}
 for (let i = 0; i < myProductList.length; i++) {
     myProductList[i].addEventListener('mouseover', function (event) {
         const imagen = event.target.attributes.imagen.value // getting img from attibute html
         const productId = event.target.attributes.product.value
+        productVariant = event.target.attributes.variant
+        document.getElementById('product-main-' + productId).src = imagen
+    });
+}
+for (let i = 0; i < myProductList.length; i++) {
+    myProductList[i].addEventListener('click', function (event) {
+        const imagen = event.target.attributes.imagen.value // getting img from attibute html
+        const productId = event.target.attributes.product.value
+        productVariant = event.target.attributes.variant
         document.getElementById('product-main-' + productId).src = imagen
     });
 }
