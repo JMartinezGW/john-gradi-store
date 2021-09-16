@@ -11,7 +11,7 @@
   <div class="rte">
     {{ page.content }}
     {% for product in collections['all'].products %}
-        {{ product.title }}
+        {{ product.title }}<br>
         <img src="{{ product.media[0] | product_img_url: 'medium' }}">
     {% endfor %}
   </div>
