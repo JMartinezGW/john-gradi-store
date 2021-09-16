@@ -36,8 +36,6 @@ for (let i = 0; i < addToCartBtnList.length; i++) {
                     ]
                 })
             });
-            console.log(request)
-            console.log(request.status)
             if (request.status === 200) {
                 alert('Product added successfully')
             } else {
