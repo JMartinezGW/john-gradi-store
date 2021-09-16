@@ -10,15 +10,18 @@
   </h1>
   <div class="rte">
     {{ page.content }}
+    {% for product in collections[settings.home_featured_collection].products %}
+        {{ product.title }}
+    {% endfor %}
     {% for produc in all_products %}
-    {{ produc }}
+        {{ produc }}
     {% endfor %}
     {% for product in products %}
-    {{ product }}
+        {{ product }}
     {% endfor %}
     collection
     {% for collection in product.collections %}
-    {{ collection.title }}
+        {{ collection.title }}
     {% endfor %}
   </div>
 </div>
