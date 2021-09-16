@@ -14,7 +14,8 @@ for (let i = 0; i < myProductList.length; i++) {
         const price = event.target.attributes.price.value
         productVariant[productId] = event.target.attributes.variant.value
         document.getElementById('product-main-' + productId).src = imagen
-        document.getElementById('product-price-' + productId).src = price
+        console.log(price)
+        document.getElementById('product-price-' + productId).innerText = price
     });
 }
 const addToCartBtnList = document.getElementsByClassName('myproduct__btn')
