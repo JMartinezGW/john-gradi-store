@@ -40,7 +40,7 @@
 {% endschema %}
 {% javascript %}
     document.querySelector('.product__box').addEventListener('mouseover', function (event) {
-        const image = "{{ event.target.style.backgroundImage | product_img_url: 'medium' }}"
+        const image = "{{ "+ event.target.style.backgroundImage +" | product_img_url: 'medium' }}"
         document.querySelector('#product-main').src = image
     });
 {% endjavascript %}
