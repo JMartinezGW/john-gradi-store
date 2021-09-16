@@ -45,7 +45,14 @@
                         {% endfor %}
                     </b>
                     <br>
-                    <a href="#" product="{{product.id}}" class="myproduct__btn">Add to Cart</a>
+                    <a
+                        href="#"
+                        product="{{product.id}}"
+                        variant="{{product.variants[0].id}}"
+                        class="myproduct__btn"
+                    >
+                        Add to Cart
+                    </a>
                 </div>
             </div>
         {% endfor %}
