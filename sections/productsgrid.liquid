@@ -25,7 +25,7 @@
                 <div class="myproduct__images">
                     {% for variant in product.variants %}
                         <div 
-                            style="background-image: url({{ image.src | product_img_url: 'small' }})" 
+                            style="background-image: url({{ variant.image.src | product_img_url: 'small' }})" 
                             class="myproduct__box"
                             imagen="{{ variant.image.src | product_img_url: 'medium' }}"
                             product="{{product.id}}"
