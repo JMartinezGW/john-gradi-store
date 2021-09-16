@@ -2,8 +2,9 @@
 <link rel="stylesheet" href="{{ 'component-rte.css' | asset_url }}" media="print" onload="this.media='all'">
 
 <noscript>{{ 'section-main-page.css' | asset_url | stylesheet_tag }}</noscript>
-<noscript>{{ 'section-productsgrid.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
+
+{{ 'section-productsgrid.css' | asset_url | stylesheet_tag }}
 
 <script src="{{ 'section-productsgrid.js' | asset_url }}" defer="defer"></script>
 
