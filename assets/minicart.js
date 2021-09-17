@@ -19,9 +19,7 @@ const showOverlay = () => {
 
 const getProductsMiniCart = async () => {
     try {
-        fetch('/cart.js').then((res) => {
-            res.json()
-        })
+        fetch('/cart.js').then((res) => res.json())
         .then((response) => {
             console.log(response)
         })
