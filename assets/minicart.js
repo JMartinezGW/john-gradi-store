@@ -61,7 +61,7 @@ const incrementQuantity = (item) => {
     document.getElementById('product-profile-' + itemJSON.id) = productProfile(itemJSON)
 }
 
-const incrementQuantity = (item) => {
+const decreaseQuantity = (item) => {
     const itemJSON = JSON.parse(item)
     itemJSON.quantity--
     document.getElementById('product-profile-' + itemJSON.id) = productProfile(itemJSON)
