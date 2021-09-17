@@ -1,26 +1,26 @@
 const myProductList = document.getElementsByClassName('myproduct__box')
 const productVariant = []
 for (let i = 0; i < myProductList.length; i++) {
-    myProductList[i].addEventListener('mouseover', function (event) {
-        const image = event.target.attributes.image.value // getting img from attibute html
-        const productId = event.target.attributes.product.value
+    myProductList[i].addEventListener('mouseover', (event) => {
+        const image = event.target.dataset.image // getting img from attibute html
+        const productId = event.target.dataset.product
         document.getElementById('product-main-' + productId).src = image
     });
 }
 for (let i = 0; i < myProductList.length; i++) {
-    myProductList[i].addEventListener('click', function (event) {
-        const image = event.target.attributes.image.value // getting img from attibute html
-        const productId = event.target.attributes.product.value
-        const price = event.target.attributes.price.value
-        productVariant[productId] = event.target.attributes.variant.value
+    myProductList[i].addEventListener('click', (event) => {
+        const image = event.target.dataset.image // getting img from attibute html
+        const productId = event.target.dataset.product
+        const price = event.target.dataset.price
+        productVariant[productId] = event.target.dataset.variant
         document.getElementById('product-main-' + productId).src = image
         document.getElementById('product-price-' + productId).innerText = price
     });
 }
 const addToCartBtnList = document.getElementsByClassName('myproduct__btn')
 for (let i = 0; i < addToCartBtnList.length; i++) {
-    addToCartBtnList[i].addEventListener('click', async function (event) {
-        const variantId = (productVariant[event.target.attributes.product.value] ? productVariant[event.target.attributes.product.value] : event.target.attributes.variant.value)
+    addToCartBtnList[i].addEventListener('click', async (event) => {
+        const variantId = (productVariant[event.target.dataset.product] ? productVariant[event.target.dataset.product] : event.target.dataset.variant)
         try {
             const request = await fetch('/cart/add.js', {
                 method: 'POST',

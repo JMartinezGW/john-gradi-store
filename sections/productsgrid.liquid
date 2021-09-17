@@ -18,7 +18,11 @@
             <div class="col-md-3 col-xs-12 myproduct">
                 <div class="myproduct__image">
                     <a href="{{product.url}}?view=custom">
-                        <img id="product-main-{{product.id}}" style="max-height: 200px; height: auto;" src="{{ product.media[0] | product_img_url: 'medium' }}">
+                        <img 
+                            id="product-main-{{product.id}}"
+                            style="max-height: 200px; height: auto;"
+                            src="{{ product.media[0] | product_img_url: 'medium' }}"
+                        >
                     </a>
                 </div>
                 <div class="myproduct__images">
@@ -26,10 +30,10 @@
                         <div 
                             style="background-image: url({{ variant.image.src | product_img_url: 'small' }})" 
                             class="myproduct__box"
-                            image="{{ variant.image.src | product_img_url: 'medium' }}"
-                            product="{{product.id}}"
-                            variant="{{variant.id}}"
-                            price="{{variant.price | money}}"
+                            data-image="{{ variant.image.src | product_img_url: 'medium' }}"
+                            data-product="{{product.id}}"
+                            data-variant="{{variant.id}}"
+                            data-price="{{variant.price | money}}"
                         >
                             &nbsp;
                         </div>
@@ -47,8 +51,8 @@
                     <br>
                     <a
                         href="#"
-                        product="{{product.id}}"
-                        variant="{{product.variants[0].id}}"
+                        data-product="{{product.id}}"
+                        data-variant="{{product.variants[0].id}}"
                         class="myproduct__btn"
                     >
                         Add to Cart
