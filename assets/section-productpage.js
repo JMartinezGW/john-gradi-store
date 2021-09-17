@@ -9,8 +9,10 @@ for (let i = 0; i < variants.length; i++) {
     });
 }
 
-document.getElementById('btn-add-cart').addEventListener('click', async (event) => {
-    const variantId = (variantSelected !== 0 ? variantSelected : event.target.dataset.variant)
+document.getElementById('btn-add-cart').addEventListener('click', async () => {
+    if (variantSelected === 0) {
+        alert('First select a variant please')
+    } else {
         try {
             const request = await fetch('/cart/add.js', {
                 method: 'POST',
@@ -21,7 +23,7 @@ document.getElementById('btn-add-cart').addEventListener('click', async (event) 
                     items: [
                         {
                             quantity: 1,
-                            id: variantId
+                            id: variantSelected
                         }
                     ]
                 })
@@ -36,4 +38,5 @@ document.getElementById('btn-add-cart').addEventListener('click', async (event) 
             console.log('error')
             console.error(error)
         }
+    }
 })
