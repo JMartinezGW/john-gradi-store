@@ -30,6 +30,7 @@
 }
 
 .product__variant:checked + .product__variant__label {
-    background-color:#bfb;
+    background-color:#000;
     border-color: #000;
+    color: #FFF;
 }
