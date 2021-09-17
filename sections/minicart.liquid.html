@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="{{ 'section-main-page.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-rte.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<noscript>{{ 'section-main-page.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
+
+{{ 'section-productsgrid.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'section-productsgrid.js' | asset_url }}" defer="defer"></script>
+
+<div class="minicart">
+  <h1 class="main-page-title page-title h0">
+    Minicart
+  </h1>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-page.name",
+  "tag": "section",
+  "class": "spaced-section",
+  "settings": [
+    {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+    }
+    ]
+}
+{% endschema %}
