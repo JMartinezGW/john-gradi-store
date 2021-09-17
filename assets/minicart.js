@@ -59,3 +59,8 @@ const incrementQuantity = (item) => {
     item.quantity++
     document.getElementById('product-profile-' + item.id) = productProfile(item)
 }
+
+const decreaseQuantity = (item) => {
+    item.quantity--
+    document.getElementById('product-profile-' + item.id) = productProfile(item)
+}
