@@ -8,8 +8,33 @@
 
 <!-- <script src="{{ 'section-productpage.js' | asset_url }}" defer="defer"></script> -->
 
-<div>
-    {{ product.title }}
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-5">
+        <div class="product__image">
+            <img src="{{ product | img_url }}" id="product-image">
+        </div>
+    </div>
+    <div class="col-5">
+        <b>{{ product.title }}</b>
+        <p id="product-price-{{product.id}}">{{ product.price | money }}</p>
+        <b>
+            Variants: 
+            {% for variant in product.variants %}
+                {{ variant.title }}
+            {% endfor %}
+        </b>
+        <br>
+        <a
+            href="#"
+            product="{{product.id}}"
+            variant="{{product.variants[0].id}}"
+            class="myproduct__btn"
+        >
+            Add to Cart
+        </a>
+    </div>
+    <div class="col-1"></div>
 </div>
 
 {% schema %}
