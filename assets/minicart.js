@@ -104,18 +104,11 @@ const changeCartRequest = async (item) => {
 const checkIsAvailableToIncrease = (item) => {
     try {
         let res = false
-
-        console.log(item)
-        // fetch('/products/' + item + '.js').then((res) => res.json())
-        // .then((response) => {
-        //     const items = response.items
-        //     let html = ''
-        //     for (let i = 0; i < items.length; i++) {
-        //         html += productProfile(items[i])
-        //     }
-        //     document.getElementById('minicart-products').innerHTML = html
-        // })
-        return res
+        fetch('/products/' + item.handle + '.js').then((res) => res.json())
+        .then((response) => {
+            console.log(response)
+            return res
+        })
     } catch (error) {
         console.error(error)
         return false
