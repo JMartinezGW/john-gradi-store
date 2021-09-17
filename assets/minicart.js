@@ -87,7 +87,7 @@ const changeCartRequest = async (item) => {
             },
             body: JSON.stringify({
                 quantity: item.quantity,
-                id: item.id
+                id: item.key
             })
         });
     } catch (error) {
