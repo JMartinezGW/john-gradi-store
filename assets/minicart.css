@@ -23,3 +23,7 @@
     background-color: #FFF;
     z-index: 3;
 }
+
+#minicart .active {
+    right: 0;
+}

@@ -1,11 +1,11 @@
 const openMiniCart = () => {
     showOverlay()
-    document.getElementById("minicart").style.display = "block";
+    document.getElementById("minicart").classList.add("active");
 }
 
 const closeMiniCart = () => {
     hiddeOverlay()
-    document.getElementById("minicart").style.display = "none";
+    document.getElementById("minicart").classList.remove("active");
 }
 
 const hiddeOverlay = () => {
