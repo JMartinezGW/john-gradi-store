@@ -64,13 +64,15 @@ const incrementQuantity = (item) => {
 
 const decreaseQuantity = (item) => {
     const itemJSON = JSON.parse(item.dataset.item)
-    itemJSON.quantity++
+    itemJSON.quantity--
     replaceHtmlProduct(itemJSON)
 }
 
 
 const replaceHtmlProduct = (item) => {
     const tempBlockHtml = document.createElement('div')
-    tempBlockHtml.innerHTML = productProfile(item)
+    if (item.quantity > 0) { // show products with quantity > 0
+        tempBlockHtml.innerHTML = productProfile(item)
+    }
     document.getElementById('product-profile-' + item.id).replaceWith(tempBlockHtml)
 }
