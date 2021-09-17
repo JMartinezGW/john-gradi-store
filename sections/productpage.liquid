@@ -10,12 +10,12 @@
 
 <div class="row">
     <div class="col-1"></div>
-    <div class="col-5">
+    <div class="col-md-7 col-xs-12">
         <div class="product__image">
             <img src="{{ product | img_url }}" id="product-image">
         </div>
     </div>
-    <div class="col-5">
+    <div class="col-md-3 col-xs-12">
         <b>{{ product.title }}</b>
         <p id="product-price-{{product.id}}">{{ product.price | money }}</p>
         <b>
@@ -24,6 +24,7 @@
                 {{ variant.title }}
             {% endfor %}
         </b>
+        <br>
         <br>
         <a
             href="#"
