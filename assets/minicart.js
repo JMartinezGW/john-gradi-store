@@ -59,9 +59,9 @@ const productProfile = (item) => {
 }
 
 const incrementQuantity = (item) => {
-    const isAvailable = checkIsAvailableToIncrease(item)
+    const itemJSON = JSON.parse(item.dataset.item)
+    const isAvailable = checkIsAvailableToIncrease(itemJSON)
     if (isAvailable) {
-        const itemJSON = JSON.parse(item.dataset.item)
         itemJSON.quantity++
         replaceHtmlProduct(itemJSON)
         changeCartRequest(itemJSON)
