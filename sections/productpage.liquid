@@ -4,7 +4,7 @@
 <noscript>{{ 'section-main-page.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
 
-<!-- {{ 'section-productpage.css' | asset_url | stylesheet_tag }} -->
+{{ 'section-productpage.css' | asset_url | stylesheet_tag }}
 
 <!-- <script src="{{ 'section-productpage.js' | asset_url }}" defer="defer"></script> -->
 
@@ -29,7 +29,7 @@
             href="#"
             product="{{product.id}}"
             variant="{{product.variants[0].id}}"
-            class="myproduct__btn"
+            class="product__btn"
         >
             Add to Cart
         </a>
