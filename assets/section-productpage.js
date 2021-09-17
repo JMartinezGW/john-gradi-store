@@ -27,8 +27,8 @@ document.getElementById('btn-add-cart').addEventListener('click', async (event) 
                 })
             });
             if (request.status === 200) {
-                // location.href="/cart"
-                openMiniCart()
+                location.href="/cart"
+                // openMiniCart()
             } else {
                 alert('Not enough stock')
             }
