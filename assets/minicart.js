@@ -34,7 +34,6 @@ const getProductsMiniCart = async () => {
 }
 
 const productProfile = (item) => {
-    console.log(JSON.stringify(item))
     const html = `
     <div class="row" id="product-profile-${item.id}">
         <div class="col-3">
