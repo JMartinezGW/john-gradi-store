@@ -37,7 +37,8 @@ for (let i = 0; i < addToCartBtnList.length; i++) {
                 })
             });
             if (request.status === 200) {
-                location.href="/cart"
+                // location.href="/cart"
+                document.getElementById("overlay").style.display = "block";
             } else {
                 alert('Not enough stock')
             }
