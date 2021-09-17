@@ -6,7 +6,7 @@
 
 {{ 'section-productpage.css' | asset_url | stylesheet_tag }}
 
-<!-- <script src="{{ 'section-productpage.js' | asset_url }}" defer="defer"></script> -->
+<script src="{{ 'section-productpage.js' | asset_url }}" defer="defer"></script>
 
 <div class="row">
     <div class="col-1"></div>
@@ -30,6 +30,8 @@
                         name="variant"
                         value="{{ variant.id }}"
                         class="product__variant"
+                        data-image="{{ variant.image.src | product_img_url: 'small' }}"
+                        data-variant= {{ variant.id }}
                     >
                     <label for="{{ variant.id }}" class="product__variant__label">
                         {{ variant.title }}
