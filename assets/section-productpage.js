@@ -4,8 +4,10 @@ for (let i = 0; i < variants.length; i++) {
     variants[i].addEventListener('click', (event) => {
         const image = event.target.dataset.image
         const variantId = event.target.dataset.variant
+        const price = event.target.dataset.price
         variantSelected = variantId
         document.getElementById('product-image').src = image
+        document.getElementById('product-price').innerText = price
     });
 }
 

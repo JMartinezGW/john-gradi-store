@@ -19,7 +19,7 @@
     </div>
     <div class="col-md-3 col-xs-12">
         <b>{{ product.title }}</b>
-        <p id="product-price-{{product.id}}">{{ product.price | money }}</p>
+        <p id="product-price">{{ product.price | money }}</p>
         <b>
             Colores: 
             <div class="product__variants">
@@ -32,6 +32,7 @@
                         class="product__variant"
                         data-variant="{{ variant.id }}"
                         data-image="{{ variant.image.src | img_url: 'large' }}"
+                        data-price="{{variant.price | money}}"
                     >
                     <label for="{{ variant.id }}" class="product__variant__label">
                         {{ variant.title }}
