@@ -21,7 +21,12 @@ const getProductsMiniCart = async () => {
     try {
         fetch('/cart.js').then((res) => res.json())
         .then((response) => {
-            console.log(response)
+            const items = response.items
+            let html = ''
+            for (let i = 0; i < items.length; i++) {
+                html += productProfile(items[i])
+            }
+            document.getElementById('minicart-products').innerHTML = html
         })
     } catch (error) {
         console.error(error)
