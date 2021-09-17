@@ -1,0 +1,14 @@
+{
+    "sections": {
+      "main": {
+        "type": "productpage",
+        "settings": {
+          "collection": "motos"
+        }
+      }
+    },
+    "order": [
+      "main"
+    ]
+  }
+  
