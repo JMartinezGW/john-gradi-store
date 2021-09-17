@@ -59,7 +59,18 @@ const productProfile = (item) => {
 const incrementQuantity = (item) => {
     const itemJSON = JSON.parse(item.dataset.item)
     itemJSON.quantity++
+    replaceHtmlProduct(itemJSON)
+}
+
+const decreaseQuantity = (item) => {
+    const itemJSON = JSON.parse(item.dataset.item)
+    itemJSON.quantity++
+    replaceHtmlProduct(itemJSON)
+}
+
+
+const replaceHtmlProduct = (item) {
     const tempBlockHtml = document.createElement('div')
-    tempBlockHtml.innerHTML = productProfile(itemJSON)
-    document.getElementById('product-profile-' + itemJSON.id).replaceWith(tempBlockHtml)
+    tempBlockHtml.innerHTML = productProfile(item)
+    document.getElementById('product-profile-' + item.id).replaceWith(tempBlockHtml)
 }
