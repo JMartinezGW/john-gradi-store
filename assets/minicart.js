@@ -44,8 +44,8 @@ const productProfile = (item) => {
             ${item.product_title}
         </div>
         <div class="col-2">
-            <input type="button" onclick='decreaseQuantity(${JSON.stringify(item)})' value="-">
-            <input type="button" onclick="incrementQuantity(${JSON.stringify(item)})" value="+">
+            <input type="button" data-item='${JSON.stringify(item)}' onclick="decreaseQuantity(this)" value="-">
+            <input type="button" data-item='${JSON.stringify(item)}' onclick="incrementQuantity(this)" value="+">
         </div>
         <div class="col-3">
             ${item.quantity}<br>
@@ -57,13 +57,13 @@ const productProfile = (item) => {
 }
 
 const incrementQuantity = (item) => {
-    const itemJSON = JSON.parse(item)
+    const itemJSON = JSON.parse(item.dataset.item)
     itemJSON.quantity++
     document.getElementById('product-profile-' + itemJSON.id) = productProfile(itemJSON)
 }
 
 const decreaseQuantity = (item) => {
-    const itemJSON = JSON.parse(item)
+    const itemJSON = JSON.parse(item.dataset.item)
     itemJSON.quantity--
     document.getElementById('product-profile-' + itemJSON.id) = productProfile(itemJSON)
 }
