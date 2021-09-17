@@ -69,7 +69,7 @@ const decreaseQuantity = (item) => {
 }
 
 
-const replaceHtmlProduct = (item) {
+const replaceHtmlProduct = (item) => {
     const tempBlockHtml = document.createElement('div')
     tempBlockHtml.innerHTML = productProfile(item)
     document.getElementById('product-profile-' + item.id).replaceWith(tempBlockHtml)
