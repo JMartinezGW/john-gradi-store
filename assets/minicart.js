@@ -35,7 +35,7 @@ const getProductsMiniCart = async () => {
 
 const productProfile = (item) => {
     const html = `
-    <div class="row">
+    <div class="row" id="product-profile-${item.id}">
         <div class="col-3">
             ${item.product_title}
         </div>
@@ -43,8 +43,8 @@ const productProfile = (item) => {
             ${item.product_title}
         </div>
         <div class="col-2">
-            <input type="button" onclick="${item.quantity++}" value="-">
-            <input type="button" onclick="${item.quantity--}" value="+">
+            <input type="button" onclick="incrementQuantity(${item})" value="-">
+            <input type="button" onclick="decreaseQuantity(${item})" value="+">
         </div>
         <div class="col-3">
             ${item.quantity}<br>
@@ -53,4 +53,9 @@ const productProfile = (item) => {
     </div>
     `
     return html
+}
+
+const incrementQuantity = (item) => {
+    item.quantity++
+    document.getElementById('product-profile-' + item.id) = productProfile(item)
 }
