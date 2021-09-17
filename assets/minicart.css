@@ -14,15 +14,12 @@
 
 #minicart {
     position: fixed;
+    display: none;
     width: 300px; /* Full width (cover the whole page) */
     height: 100%; /* Full height (cover the whole page) */
     top: 0;
-    right: -300px;
+    right: 0;
     bottom: 0;
     background-color: #FFF;
     z-index: 3;
-}
-
-#minicart .active {
-    right: 0px !important;
 }

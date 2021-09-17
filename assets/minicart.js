@@ -1,17 +1,17 @@
 const openMiniCart = () => {
     showOverlay()
-    document.getElementById("minicart").classList.add("active");
+    document.getElementById('minicart').display = 'block';
 }
 
 const closeMiniCart = () => {
     hiddeOverlay()
-    document.getElementById("minicart").classList.remove("active");
+    document.getElementById('minicart').display = 'none';
 }
 
 const hiddeOverlay = () => {
-    document.getElementById("overlay").style.display = "none";
+    document.getElementById('overlay').style.display = 'none';
 }
 
 const showOverlay = () => {
-    document.getElementById("overlay").style.display = "block";
+    document.getElementById('overlay').style.display = 'block';
 }
