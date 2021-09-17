@@ -34,6 +34,7 @@ const getProductsMiniCart = async () => {
 }
 
 const productProfile = (item) => {
+    console.log(JSON.stringify(item))
     const html = `
     <div class="row" id="product-profile-${item.id}">
         <div class="col-3">
@@ -43,8 +44,8 @@ const productProfile = (item) => {
             ${item.product_title}
         </div>
         <div class="col-2">
-            <input type="button" onclick="decreaseQuantity("${JSON.stringify(item)}")" value="-">
-            <input type="button" onclick="incrementQuantity("${JSON.stringify(item)}")" value="+">
+            <input type="button" onclick="decreaseQuantity('${JSON.stringify(item)}')" value="-">
+            <input type="button" onclick="incrementQuantity('${JSON.stringify(item)}')" value="+">
         </div>
         <div class="col-3">
             ${item.quantity}<br>
