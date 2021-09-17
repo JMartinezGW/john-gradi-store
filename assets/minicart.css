@@ -15,10 +15,10 @@
 #minicart {
     position: fixed;
     display: none; /* Hidden by default */
-    width: 200px; /* Full width (cover the whole page) */
+    width: 30%; /* Full width (cover the whole page) */
     height: 100%; /* Full height (cover the whole page) */
     top: 0;
-    right: -200px;
+    right: -30%;
     bottom: 0;
     background-color: #FFF;
     z-index: 3;
