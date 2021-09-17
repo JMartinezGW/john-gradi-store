@@ -21,10 +21,23 @@
         <b>{{ product.title }}</b>
         <p id="product-price-{{product.id}}">{{ product.price | money }}</p>
         <b>
-            Variants: 
-            {% for variant in product.variants %}
-                {{ variant.title }}
-            {% endfor %}
+            Colores: 
+            <div class="product__variants">
+                {% for variant in product.variants %}
+                    <input 
+                        type="radio"
+                        id="{{ variant.id }}"
+                        name="variant"
+                        value="{{ variant.id }}"
+                        checked
+                        class="product__variant"
+                    >
+                    <label for="{{ variant.id }}" class="product__variant__label">
+                        {{ variant.title }}
+                    </label>
+                {% endfor %}
+            </div>
+            
         </b>
         <br>
         <br>
