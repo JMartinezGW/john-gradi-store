@@ -9,13 +9,20 @@
 <!-- <script src="{{ 'section-productpage.js' | asset_url }}" defer="defer"></script> -->
 
 <div>
-    Hola mundo
+    {{ product.title }}
 </div>
 
 {% schema %}
 {
   "name": "t:sections.main-page.name",
   "tag": "section",
-  "class": "spaced-section"
+  "class": "spaced-section",
+  "settings": [
+    {
+        "type": "product",
+        "id": "product",
+        "label": "Product"
+    }
+   ]
 }
 {% endschema %}
