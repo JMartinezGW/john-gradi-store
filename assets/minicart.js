@@ -19,15 +19,12 @@ const showOverlay = () => {
 
 const getProductsMiniCart = async () => {
     try {
-        const request = await fetch('/cart.js')
-        if (request.status === 200) {
-            console.log(request)
-            const items = request.json()
-            console.log(items)
-            // for (let i = 0; i < array.length; i++) {
-                
-            // }
-        }
+        fetch('/cart.js').then((res) => {
+            res.json()
+        })
+        .then((response) => {
+            console.log(response)
+        })
     } catch (error) {
         console.error(error)
     }
