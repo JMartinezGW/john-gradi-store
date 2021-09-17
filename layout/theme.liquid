@@ -29,6 +29,7 @@
 
     {% render 'meta-tags' %}
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'minicart.js' | asset_url }}"></script>
     {{ content_for_header }}
 
     {%- liquid
@@ -123,7 +124,7 @@
   </head>
 
   <body class="gradient">
-    <div id="overlay"></div>
+    <div id="overlay" onclick="closeMiniCart()"></div>
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>

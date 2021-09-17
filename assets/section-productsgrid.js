@@ -38,9 +38,7 @@ for (let i = 0; i < addToCartBtnList.length; i++) {
             });
             if (request.status === 200) {
                 // location.href="/cart"
-                console.log(document.getElementById("overlay"))
-                document.getElementById("overlay").style.display = "block";
-                console.log(document.getElementById("overlay"))
+                openMiniCart()
             } else {
                 alert('Not enough stock')
             }
