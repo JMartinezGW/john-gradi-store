@@ -44,8 +44,8 @@ const productProfile = (item) => {
             ${item.product_title}
         </div>
         <div class="col-2">
-            <input type="button" onclick="decreaseQuantity('${JSON.stringify(item)}')" value="-">
-            <input type="button" onclick="incrementQuantity('${JSON.stringify(item)}')" value="+">
+            <input type="button" onclick='decreaseQuantity(${JSON.stringify(item)})' value="-">
+            <input type="button" onclick="incrementQuantity(${JSON.stringify(item)})" value="+">
         </div>
         <div class="col-3">
             ${item.quantity}<br>
