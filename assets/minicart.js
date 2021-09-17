@@ -47,6 +47,7 @@ const productProfile = (item) => {
             <input type="button" onclick="${item.quantity--}" value="+">
         </div>
         <div class="col-3">
+            ${item.quantity}<br>
             ${(item.price * item.quantity)}
         </div>
     </div>
