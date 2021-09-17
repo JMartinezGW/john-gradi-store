@@ -11,9 +11,11 @@
 <div class="row">
     <div class="col-1"></div>
     <div class="col-md-7 col-xs-12">
-        <div class="product__image">
-            <img src="{{ product | img_url: 'large' }}" id="product-image">
-        </div>
+            <img
+                class="product__image"
+                id="product-image"
+                src="{{ product | img_url: 'large' }}"
+            >
     </div>
     <div class="col-md-3 col-xs-12">
         <b>{{ product.title }}</b>
