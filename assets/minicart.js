@@ -37,7 +37,10 @@ const productProfile = (item) => {
     const html = `
     <div class="row" id="product-profile-${item.id}">
         <div class="col-3">
-            ${item.product_title}
+            <img 
+                src="${item.image}"
+                style="max-height: 150px; max-width: 150px; height: auto; width: auto;"
+            >
         </div>
         <div class="col-4">
             ${item.product_title}
