@@ -14,7 +14,6 @@
 
 #minicart {
     position: fixed;
-    display: none; /* Hidden by default */
     width: 30%; /* Full width (cover the whole page) */
     height: 100%; /* Full height (cover the whole page) */
     top: 0;
