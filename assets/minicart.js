@@ -17,7 +17,7 @@ const showOverlay = () => {
     document.getElementById('overlay').style.display = 'block';
 }
 
-const getProductsMiniCart = async () => {
+const getProductsMiniCart = () => {
     try {
         fetch('/cart.js').then((res) => res.json())
         .then((response) => {
@@ -59,12 +59,14 @@ const incrementQuantity = (item) => {
     const itemJSON = JSON.parse(item.dataset.item)
     itemJSON.quantity++
     replaceHtmlProduct(itemJSON)
+    changeCartRequest(itemJSON)
 }
 
 const decreaseQuantity = (item) => {
     const itemJSON = JSON.parse(item.dataset.item)
     itemJSON.quantity--
     replaceHtmlProduct(itemJSON)
+    changeCartRequest(itemJSON)
 }
 
 
@@ -74,4 +76,21 @@ const replaceHtmlProduct = (item) => {
         tempBlockHtml.innerHTML = productProfile(item)
     }
     document.getElementById('product-profile-' + item.id).replaceWith(tempBlockHtml)
+}
+
+const changeCartRequest = async (item) => {
+    try {
+        await fetch('/cart/change.js', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                quantity: item.quantity,
+                id: item.id
+            })
+        });
+    } catch (error) {
+        console.error(error)
+    }
 }
