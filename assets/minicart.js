@@ -22,7 +22,7 @@ const getProductsMiniCart = async () => {
         const request = await fetch('/cart.js')
         if (request.status === 200) {
             console.log(request)
-            const items = request.json
+            const items = request.json()
             console.log(items)
             // for (let i = 0; i < array.length; i++) {
                 
