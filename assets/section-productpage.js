@@ -9,7 +9,7 @@ for (let i = 0; i < variants.length; i++) {
     });
 }
 
-document.getElementById('btn-add-cart').addEventListener('click', (event) => {
+document.getElementById('btn-add-cart').addEventListener('click', async (event) => {
     const variantId = (variantSelected !== 0 ? variantSelected : event.target.dataset.variant)
         try {
             const request = await fetch('/cart/add.js', {
