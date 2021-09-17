@@ -59,6 +59,8 @@ const productProfile = (item) => {
 }
 
 const incrementQuantity = (item) => {
+    const isAvailable = checkIsAvailableToIncrease(item)
+    if (isAvailable)
     const itemJSON = JSON.parse(item.dataset.item)
     itemJSON.quantity++
     replaceHtmlProduct(itemJSON)
@@ -95,5 +97,26 @@ const changeCartRequest = async (item) => {
         });
     } catch (error) {
         console.error(error)
+    }
+}
+
+const checkIsAvailableToIncrease = (item) => {
+    try {
+        let res = false
+
+        console.log(item)
+        // fetch('/products/' + item + '.js').then((res) => res.json())
+        // .then((response) => {
+        //     const items = response.items
+        //     let html = ''
+        //     for (let i = 0; i < items.length; i++) {
+        //         html += productProfile(items[i])
+        //     }
+        //     document.getElementById('minicart-products').innerHTML = html
+        // })
+        return res
+    } catch (error) {
+        console.error(error)
+        return false
     }
 }
