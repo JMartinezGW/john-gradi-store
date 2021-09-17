@@ -30,6 +30,7 @@
                         name="variant"
                         value="{{ variant.id }}"
                         class="product__variant"
+                        data-variant="{{ variant.id }}"
                         data-image="{{ variant.image.src | img_url: 'large' }}"
                     >
                     <label for="{{ variant.id }}" class="product__variant__label">
