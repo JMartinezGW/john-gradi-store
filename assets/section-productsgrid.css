@@ -18,11 +18,13 @@
 }
 
 .myproduct__btn {
-    padding: 10px 5px;
+    padding: 5px 10px;
     background: black;
     color: white !important;
     text-decoration: none;
     border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .myproduct__image {
