@@ -17,7 +17,7 @@
         {% for product in section.settings.collection.products %}
             <div class="col-md-3 col-xs-12 myproduct">
                 <div class="myproduct__image">
-                    <a href="{{product.url}}">
+                    <a href="{{product.url}}?view=custom">
                         <img id="product-main-{{product.id}}" style="max-height: 200px; height: auto;" src="{{ product.media[0] | product_img_url: 'medium' }}">
                     </a>
                 </div>
