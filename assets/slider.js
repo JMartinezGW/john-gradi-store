@@ -2,6 +2,8 @@
 // Slider
 
 const slider = document.getElementById('slider')
+const dataSlider = document.getElementById('slider').dataset.slider
+console.log(dataSlider)
 let sliderSection = document.getElementsByClassName('slider__section')
 let sliderSectionLast = sliderSection[sliderSection.length - 1]
 
