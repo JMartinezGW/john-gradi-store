@@ -330,8 +330,13 @@
     ]
   },
   {
-    "type": "textarea",
-    "id": "colors_products",
-    "label": "Color products"
+    "name": "t:settings_schema.social-media.name",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "colors_products",
+        "label": "Color products"
+      }
+    ]
   }
 ]
