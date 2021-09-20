@@ -93,10 +93,6 @@ const changeCartRequest = (item) => {
             })
         }).then((res) => res.json())
         .then((response) => {
-            console.log('item')
-            console.log(item)
-            console.log('response')
-            console.log(response)
             for (let i = 0; i < response.items.length; i++) {
                 if (response.items[i].id === item.id) {
                     if (response.items[i].quantity !== item.quantity) {
