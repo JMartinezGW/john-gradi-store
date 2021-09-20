@@ -28,3 +28,17 @@
 .minicart__title {
     text-align: center;
 }
+
+.minicart__btn-quantity {
+    width: 4.5rem;
+    flex-shrink: 0;
+    font-size: 1.8rem;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(var(--color-foreground));
+    padding: 0;
+}
