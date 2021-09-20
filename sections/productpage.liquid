@@ -10,14 +10,16 @@
 {% assign colors = section.settings.colors | split: ";" %}
 <style>
     {% for color in colors %}
-        
+        {% assign colorObject = color | split: ":" %}
+        {{ colorObject[0] }}
     {% endfor %}
 </style>
 <div class="row">
     <div class="col-1"></div>
     <div class="col-md-7 col-xs-12">
         {% for color in colors %}
-            {{color}}<br>
+            {% assign colorObject = color | split: ":" %}
+            {{ colorObject[0] }}<br>
         {% endfor %}
             <img
                 class="product__image"
