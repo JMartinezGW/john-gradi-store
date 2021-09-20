@@ -62,8 +62,8 @@
 </div>
 <div class="row">
     <div class="col-12">
-        {% assign slider = product.metafields.my_fields.slider | json %}<br>
-        Item: {{ slider}}
+        {% assign slider = product.metafields.my_fields.slider.value | json %}<br>
+        Item: {{ slider }}
         {% for itemSlider in slider.items %}
             {{itemSlider.title}}
         {% endfor %}
