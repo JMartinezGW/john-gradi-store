@@ -15,8 +15,7 @@ const nextSlide = () => {
     slider.style.transition = 'all 0.5s'
     setTimeout(() => {
         slider.style.transition = 'none'
-        console.log('sliderSectionFirst')
-        console.log(sliderSectionFirst)
+        console.log(document.getElementsByClassName('slider__section')[1])
         slider.insertAdjacentElement('beforeend', sliderSectionFirst)
         slider.style.marginLeft = '-100%'
     }, 500)
