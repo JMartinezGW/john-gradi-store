@@ -14,7 +14,7 @@ slider.insertAdjacentElement('afterbegin', sliderSectionLast)
 const nextSlide = () => {
     if (sliderActual < sliderSection.length - 1) sliderActual++
     else if(sliderActual === sliderSection.length - 1) sliderActual = 0
-    console.log(sliderActual)
+    console.log(sliderSection[sliderActual])
     const sliderSectionFirst = document.getElementsByClassName('slider__section')[0]
     slider.style.marginLeft = '-200%'
     slider.style.transition = 'all 0.5s'
@@ -29,7 +29,7 @@ const prevSlide = () => {
     let sliderSection = document.getElementsByClassName('slider__section')
     if (sliderActual === 0) sliderActual = sliderSection.length - 1
     else sliderActual--
-    console.log(sliderActual)
+    console.log(sliderSection[sliderActual])
     let sliderSectionLast = sliderSection[sliderSection.length - 1]
     slider.style.marginLeft = '0'
     slider.style.transition = 'all 0.5s'
