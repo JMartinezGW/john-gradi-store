@@ -6,7 +6,6 @@ let dataTitles = document.getElementById('slider').dataset.titles
 let dataDescriptions = document.getElementById('slider').dataset.descriptions
 dataTitles = JSON.parse(dataTitles)
 dataDescriptions = JSON.parse(dataDescriptions)
-console.log(dataTitles)
 let sliderSection = document.getElementsByClassName('slider__section')
 let sliderSectionLast = sliderSection[sliderSection.length - 1]
 
