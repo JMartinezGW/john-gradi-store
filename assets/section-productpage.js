@@ -91,4 +91,4 @@ btnRight.addEventListener('click', nextSlide())
 
 btnLeft.addEventListener('click', prevSlide())
 
-setInterval(nextSlide(), 5000)
+// setInterval(nextSlide(), 5000)
