@@ -67,14 +67,17 @@
 <div class="row">
     <div class="col-7">
         <div class="container-slider">
-            {% assign slider = product.metafields.my_fields.slider.value %}
+            {% assign images = product.metafields.my_fields.image.value %}
+            {% assign descriptions = product.metafields.my_fields.title.value %}
+            {% assign titles = product.metafields.my_fields.description.value %}
             <div 
                 class="slider"
                 id="slider"
-                style="width: {{product.metafields.my_fields.slider.value | size}}00%;"
-                data-slider='{{slider | json}}'
+                style="width: {{product.metafields.my_fields.image.value | size}}00%;"
+                data-titles='{{titles | json}}'
+                data-descriptions='{{descriptions | json}}'
             >
-                {% for itemSlider in slider %}
+                {% for itemSlider in images %}
                     <div class="slider__section">
                         <img 
                             src="{{ itemSlider.image }}"

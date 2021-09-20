@@ -2,8 +2,10 @@
 // Slider
 
 const slider = document.getElementById('slider')
-let dataSlider = document.getElementById('slider').dataset.slider
-dataSlider = JSON.parse(dataSlider)
+let dataTitles = document.getElementById('slider').dataset.titles
+let dataDescriptions = document.getElementById('slider').dataset.descriptions
+dataTitles = JSON.parse(dataTitles)
+dataDescriptions = JSON.parse(dataDescriptions)
 let sliderSection = document.getElementsByClassName('slider__section')
 let sliderSectionLast = sliderSection[sliderSection.length - 1]
 
@@ -12,8 +14,8 @@ let sliderActual = 0
 const getInfomationSlide = () => {
     const info = document.getElementById('info')
     info.innerHTML=`
-    <h2>${dataSlider[sliderActual].title}</h2>
-    ${dataSlider[sliderActual].description}
+    <h2>${dataTitles[sliderActual].title}</h2>
+    ${dataDescriptions[sliderActual].description}
     `
 }
 
