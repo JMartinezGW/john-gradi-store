@@ -62,7 +62,8 @@
 </div>
 <div class="row">
     <div class="col-12">
-        {{ product.metafields.my_fields.slider }}
+        {{ product.metafields.my_fields.slider }}<br>
+        Item: {{ product.metafields.my_fields.slider.items }}
         {% for slider in product.metafields.my_fields.slider.items %}
             {{slider.title}}
         {% endfor %}
