@@ -26,10 +26,10 @@ const nextSlide = () => {
 }
 
 const prevSlide = () => {
+    let sliderSection = document.getElementsByClassName('slider__section')
     if (sliderActual === 0) sliderActual = sliderSection.length - 1
     else sliderActual--
     console.log(sliderActual)
-    let sliderSection = document.getElementsByClassName('slider__section')
     let sliderSectionLast = sliderSection[sliderSection.length - 1]
     slider.style.marginLeft = '0'
     slider.style.transition = 'all 0.5s'
