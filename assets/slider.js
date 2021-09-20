@@ -13,7 +13,7 @@ const getInfomationSlide = () => {
     const info = document.getElementById('info')
     info.innerHTML=`
     <h2>${dataSlider[sliderActual].title}</h2>
-    ${dataSlider[sliderActual.description]}
+    ${dataSlider[sliderActual].description}
     `
 }
 
