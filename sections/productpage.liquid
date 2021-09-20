@@ -9,13 +9,16 @@
 <script src="{{ 'section-productpage.js' | asset_url }}" defer="defer"></script>
 {% assign colors = section.settings.colors | split: ";" %}
 <style>
-    {% for product in colors %}
+    {% for color in colors %}
+        
     {% endfor %}
 </style>
 <div class="row">
     <div class="col-1"></div>
     <div class="col-md-7 col-xs-12">
-        {{section.settings.colors}}
+        {% for color in colors %}
+            {{color}}<br>
+        {% endfor %}
             <img
                 class="product__image"
                 id="product-image"
