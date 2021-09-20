@@ -54,7 +54,8 @@ const btnRight = document.getElementById('btn-right')
 
 slider.insertAdjacentElement('afterbegin', sliderSectionLast)
 
-function next () {
+const nextSlide = () => {
+    console.log('testing')
     const sliderSectionFirst = document.getElementsByClassName('slider__section')[0]
     slider.style.marginLeft = '-200%'
     slider.style.transition = 'all 0.5s'
@@ -65,7 +66,7 @@ function next () {
     }, 500)
 }
 
-function prev () {
+const prevSlide = () => {
     let sliderSection = document.getElementsByClassName('slider__section')
     let sliderSectionLast = sliderSection[sliderSection.length - 1]
     slider.style.marginLeft = '0'
@@ -77,8 +78,8 @@ function prev () {
     }, 500)
 }
 
-btnRight.addEventListener('click', next())
+btnRight.addEventListener('click', nextSlide())
 
-btnLeft.addEventListener('click', prev())
+btnLeft.addEventListener('click', prevSlide())
 
-setInterval(next(), 5000)
+setInterval(nextSlide(), 5000)
