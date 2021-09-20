@@ -106,6 +106,7 @@ const checkIsAvailableToIncrease = (item) => {
         let res = false
         fetch('/products/' + item.handle + '.js').then((res) => res.json())
         .then((response) => {
+            res = true // not working
             console.log(response)
             return res
         })
