@@ -86,7 +86,7 @@ const replaceHtmlProduct = (item) => {
 
 const changeCartRequest = async (item) => {
     try {
-        await fetch('/cart/change.js', {
+        const request = await fetch('/cart/change.js', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -96,6 +96,7 @@ const changeCartRequest = async (item) => {
                 id: item.key
             })
         });
+        console.log(request)
     } catch (error) {
         console.error(error)
     }
