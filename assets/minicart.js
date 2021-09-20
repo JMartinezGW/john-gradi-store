@@ -60,12 +60,12 @@ const productProfile = (item) => {
 
 const incrementQuantity = (item) => {
     const itemJSON = JSON.parse(item.dataset.item)
-    const isAvailable = checkIsAvailableToIncrease(itemJSON)
-    if (isAvailable) {
+    // const isAvailable = checkIsAvailableToIncrease(itemJSON)
+    // if (isAvailable) {
         itemJSON.quantity++
         replaceHtmlProduct(itemJSON)
         changeCartRequest(itemJSON)
-    }
+    // }
 }
 
 const decreaseQuantity = (item) => {
