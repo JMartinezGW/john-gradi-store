@@ -76,6 +76,7 @@ const nextSlide = () => {
 }
 
 const prevSlide = () => {
+    console.log('testing 5')
     let sliderSection = document.getElementsByClassName('slider__section')
     let sliderSectionLast = sliderSection[sliderSection.length - 1]
     slider.style.marginLeft = '0'
@@ -87,8 +88,14 @@ const prevSlide = () => {
     }, 500)
 }
 
-btnRight.addEventListener('click', nextSlide())
+btnRight.addEventListener('click', () => {
+    nextSlide()
+})
 
-btnLeft.addEventListener('click', prevSlide())
+btnLeft.addEventListener('click',  () => {
+    prevSlide()
+})
 
-// setInterval(nextSlide(), 5000)
+setInterval(() => {
+    nextSlide()
+}, 5000)
