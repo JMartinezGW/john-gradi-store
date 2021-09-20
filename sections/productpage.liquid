@@ -7,7 +7,7 @@
 {{ 'section-productpage.css' | asset_url | stylesheet_tag }}
 
 <script src="{{ 'section-productpage.js' | asset_url }}" defer="defer"></script>
-{% assign colors = section.settings.colors | split: "<br />" %}
+{% assign colors = section.settings.colors | split: ";" %}
 <style>
     {% for product in colors %}
     {% endfor %}
