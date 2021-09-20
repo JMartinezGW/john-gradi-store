@@ -61,15 +61,13 @@ const productProfile = (item) => {
 const incrementQuantity = (item) => {
     const itemJSON = JSON.parse(item.dataset.item)
     itemJSON.quantity++
-    replaceHtmlProduct(itemJSON)
-    changeCartRequest(itemJSON)
+    changeHTMLProductAndMakeRequest(itemJSON)
 }
 
 const decreaseQuantity = (item) => {
     const itemJSON = JSON.parse(item.dataset.item)
     itemJSON.quantity--
-    replaceHtmlProduct(itemJSON)
-    changeCartRequest(itemJSON)
+    changeHTMLProductAndMakeRequest(itemJSON)
 }
 
 const replaceHtmlProduct = (item) => {
@@ -98,8 +96,7 @@ const changeCartRequest = (item) => {
                     if (response.items[i].quantity !== item.quantity) {
                         alert('Not enough stock')
                         item.quantity--
-                        replaceHtmlProduct(item)
-                        changeCartRequest(item)
+                        changeHTMLProductAndMakeRequest(item)
                     }
                 }
             }
@@ -107,4 +104,9 @@ const changeCartRequest = (item) => {
     } catch (error) {
         console.error(error)
     }
+}
+
+const changeHTMLProductAndMakeRequest = (item) => {
+    replaceHtmlProduct(item)
+    changeCartRequest(item)
 }
