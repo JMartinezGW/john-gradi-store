@@ -8,12 +8,14 @@
 
 <script src="{{ 'section-productpage.js' | asset_url }}" defer="defer"></script>
 {% assign colors = section.settings.colors | split: ";" %}
-<style>
+{% style %}
     {% for color in colors %}
         {% assign colorObject = color | split: ":" %}
-        {{ colorObject[0] }}
+        .bg_{{ colorObject[0] }} {
+            background: {{ colorObject[1] }}
+        }
     {% endfor %}
-</style>
+{% endstyle %}
 <div class="row">
     <div class="col-1"></div>
     <div class="col-md-7 col-xs-12">
@@ -44,7 +46,7 @@
                         data-image="{{ variant.image.src | img_url: 'large' }}"
                         data-price="{{variant.price | money}}"
                     >
-                    <label for="{{ variant.id }}" class="product__variant__label">
+                    <label for="{{ variant.id }}" class="product__variant__label bg_{{ variant.title }}">
                         {{ variant.title }}
                     </label>
                 {% endfor %}
