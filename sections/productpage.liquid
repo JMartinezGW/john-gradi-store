@@ -7,7 +7,7 @@
 {{ 'section-productpage.css' | asset_url | stylesheet_tag }}
 
 <script src="{{ 'section-productpage.js' | asset_url }}" defer="defer"></script>
-{% assign colors = section.settings.colors | newline_to_br | split: "<br />" %}
+{% assign colors = settings.colors_products | newline_to_br | split: "<br />" %}
 {% style %}
     {% for color in colors %}
         {% assign colorObject = color | split: ":" %}
@@ -71,11 +71,6 @@
         "type": "product",
         "id": "product",
         "label": "Product"
-    },
-    {
-        "type": "textarea",
-        "id": "colors",
-        "label": "colors"
     }
    ]
 }

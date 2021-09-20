@@ -328,5 +328,10 @@
         "default": true
       }
     ]
+  },
+  {
+    "type": "textarea",
+    "id": "colors_products",
+    "label": "Color products"
   }
 ]
