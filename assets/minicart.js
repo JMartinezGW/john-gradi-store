@@ -46,12 +46,12 @@ const productProfile = (item) => {
             ${item.product_title}
         </div>
         <div class="col-2">
-            ${item.quantity}<hr />
             <input type="button" data-item='${JSON.stringify(item)}' onclick="decreaseQuantity(this)" value="-">
             <input type="button" data-item='${JSON.stringify(item)}' onclick="incrementQuantity(this)" value="+">
         </div>
         <div class="col-3">
-            ${(item.price * item.quantity)}
+            Cantidad: ${item.quantity}<br>
+            $${(item.price * item.quantity)}
         </div>
     </div>
     `
