@@ -72,7 +72,6 @@ const decreaseQuantity = (item) => {
     changeCartRequest(itemJSON)
 }
 
-
 const replaceHtmlProduct = (item) => {
     const tempBlockHtml = document.createElement('div')
     if (item.quantity > 0) { // show products with quantity > 0
@@ -98,6 +97,16 @@ const changeCartRequest = (item) => {
             console.log(item)
             console.log('response')
             console.log(response)
+            for (let i = 0; i < response.items.length; i++) {
+                if (response.items[i].id === item.id) {
+                    if (response.items[i].quantity !== item.quantity) {
+                        alert('Not enough stock')
+                        item.quantity--
+                        replaceHtmlProduct(item)
+                        changeCartRequest(item)
+                    }
+                }
+            }
         });
     } catch (error) {
         console.error(error)
