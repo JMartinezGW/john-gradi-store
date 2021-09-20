@@ -60,12 +60,9 @@ const productProfile = (item) => {
 
 const incrementQuantity = (item) => {
     const itemJSON = JSON.parse(item.dataset.item)
-    // const isAvailable = checkIsAvailableToIncrease(itemJSON)
-    // if (isAvailable) {
-        itemJSON.quantity++
-        replaceHtmlProduct(itemJSON)
-        changeCartRequest(itemJSON)
-    // }
+    itemJSON.quantity++
+    replaceHtmlProduct(itemJSON)
+    changeCartRequest(itemJSON)
 }
 
 const decreaseQuantity = (item) => {
@@ -84,9 +81,9 @@ const replaceHtmlProduct = (item) => {
     document.getElementById('product-profile-' + item.id).replaceWith(tempBlockHtml)
 }
 
-const changeCartRequest = async (item) => {
+const changeCartRequest = (item) => {
     try {
-        const request = await fetch('/cart/change.js', {
+        fetch('/cart/change.js', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -95,24 +92,14 @@ const changeCartRequest = async (item) => {
                 quantity: item.quantity,
                 id: item.key
             })
-        });
-        console.log(request)
-    } catch (error) {
-        console.error(error)
-    }
-}
-
-const checkIsAvailableToIncrease = (item) => {
-    try {
-        let res = false
-        fetch('/products/' + item.handle + '.js').then((res) => res.json())
+        }).then((res) => res.json())
         .then((response) => {
-            res = true // not working
+            console.log('item')
+            console.log(item)
+            console.log('response')
             console.log(response)
-            return res
-        })
+        });
     } catch (error) {
         console.error(error)
-        return false
     }
 }
