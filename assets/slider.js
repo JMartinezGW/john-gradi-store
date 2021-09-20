@@ -1,23 +1,13 @@
 
 // Slider
 
-console.log('testing 1')
 const slider = document.getElementById('slider')
 let sliderSection = document.getElementsByClassName('slider__section')
 let sliderSectionLast = sliderSection[sliderSection.length - 1]
 
 const btnLeft = document.getElementById('btn-left')
 const btnRight = document.getElementById('btn-right')
-console.log('testing 2')
-
-
-console.log('slider')
-console.log(slider)
-console.log('sliderSectionLast')
-console.log(sliderSectionLast)
-
 slider.insertAdjacentElement('afterbegin', sliderSectionLast)
-console.log('testing 3')
 
 const nextSlide = () => {
     console.log('testing 4')
