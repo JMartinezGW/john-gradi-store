@@ -7,7 +7,11 @@
 {{ 'section-productpage.css' | asset_url | stylesheet_tag }}
 
 <script src="{{ 'section-productpage.js' | asset_url }}" defer="defer"></script>
-
+{% assign colors = section.settings.colors | split: "<br />" %}
+<style>
+    {% for product in colors %}
+    {% endfor %}
+</style>
 <div class="row">
     <div class="col-1"></div>
     <div class="col-md-7 col-xs-12">
@@ -66,7 +70,7 @@
         "label": "Product"
     },
     {
-        "type": "text",
+        "type": "textarea",
         "id": "colors",
         "label": "colors"
     }
