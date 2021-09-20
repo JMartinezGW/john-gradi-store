@@ -61,11 +61,31 @@
     <div class="col-1"></div>
 </div>
 <div class="row">
-    <div class="col-12">
-        {% assign slider = product.metafields.my_fields.slider.value %}
-        {% for itemSlider in slider %}
-            {{itemSlider.title}}
-        {% endfor %}
+    <div class="col-7">
+        <div class="container-slider">
+            <div 
+                class="slider"
+                id="slider"
+            >
+                {% assign slider = product.metafields.my_fields.slider.value %}
+                {% for itemSlider in slider %}
+                    <div class="slider__section">
+                        <img 
+                            src="{{ itemSlider.image }}" 
+                            data-title="{{ itemSlider.title }}"
+                            data-description="{{ itemSlider.description }}"
+                            class="slider__img">
+                    </div>
+                {% endfor %}
+                <div class="slider__btn slider__btn--right" id="btn-right">&#62;</div>
+                <div class="slider__btn slider__btn--left" id="btn-left">&#60;</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <div id="info">
+            Hola mundo
+        </div>
     </div>
 </div>
 
