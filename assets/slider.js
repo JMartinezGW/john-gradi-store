@@ -10,7 +10,6 @@ const btnRight = document.getElementById('btn-right')
 slider.insertAdjacentElement('afterbegin', sliderSectionLast)
 
 const nextSlide = () => {
-    console.log('testing 4')
     const sliderSectionFirst = document.getElementsByClassName('slider__section')[0]
     slider.style.marginLeft = '-200%'
     slider.style.transition = 'all 0.5s'
@@ -22,7 +21,6 @@ const nextSlide = () => {
 }
 
 const prevSlide = () => {
-    console.log('testing 5')
     let sliderSection = document.getElementsByClassName('slider__section')
     let sliderSectionLast = sliderSection[sliderSection.length - 1]
     slider.style.marginLeft = '0'
