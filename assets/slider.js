@@ -4,9 +4,9 @@
 const slider = document.getElementById('slider')
 let dataTitles = document.getElementById('slider').dataset.titles
 let dataDescriptions = document.getElementById('slider').dataset.descriptions
-console.log(dataTitles)
 dataTitles = JSON.parse(dataTitles)
 dataDescriptions = JSON.parse(dataDescriptions)
+console.log(dataTitles)
 let sliderSection = document.getElementsByClassName('slider__section')
 let sliderSectionLast = sliderSection[sliderSection.length - 1]
 
