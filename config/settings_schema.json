@@ -330,7 +330,7 @@
     ]
   },
   {
-    "name": "t:settings_schema.social-media.name",
+    "name": "Color products",
     "settings": [
       {
         "type": "textarea",
