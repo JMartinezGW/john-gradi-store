@@ -1,13 +1,13 @@
 const myProductList = document.getElementsByClassName('myproduct__box')
 const productVariant = []
-for (let i = 0; i < myProductList.length; i++) {
+for (let i = 0, j = myProductList.length; i < j; i++) {
     myProductList[i].addEventListener('mouseover', (event) => {
         const image = event.target.dataset.image // getting img from attibute html
         const productId = event.target.dataset.product
         document.getElementById('product-main-' + productId).src = image
     });
 }
-for (let i = 0; i < myProductList.length; i++) {
+for (let i = 0, j = myProductList.length; i < j; i++) {
     myProductList[i].addEventListener('click', (event) => {
         const image = event.target.dataset.image // getting img from attibute html
         const productId = event.target.dataset.product
@@ -18,7 +18,7 @@ for (let i = 0; i < myProductList.length; i++) {
     });
 }
 const addToCartBtnList = document.getElementsByClassName('myproduct__btn')
-for (let i = 0; i < addToCartBtnList.length; i++) {
+for (let i = 0, j = addToCartBtnList.length; i < j; i++) {
     addToCartBtnList[i].addEventListener('click', async (event) => {
         const variantId = (productVariant[event.target.dataset.product] ? productVariant[event.target.dataset.product] : event.target.dataset.variant)
         try {

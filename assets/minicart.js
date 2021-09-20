@@ -23,7 +23,7 @@ const getProductsMiniCart = () => {
         .then((response) => {
             const items = response.items
             let html = ''
-            for (let i = 0; i < items.length; i++) {
+            for (let i = 0, j = items.length; i < j; i++) {
                 html += productProfile(items[i])
             }
             document.getElementById('minicart-products').innerHTML = html
@@ -91,7 +91,7 @@ const changeCartRequest = (item) => {
             })
         }).then((res) => res.json())
         .then((response) => {
-            for (let i = 0; i < response.items.length; i++) {
+            for (let i = 0, j = response.items.length; i < j; i++) {
                 if (response.items[i].id === item.id) {
                     if (response.items[i].quantity !== item.quantity) {
                         alert('Not enough stock')

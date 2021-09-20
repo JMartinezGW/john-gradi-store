@@ -1,6 +1,6 @@
 let variantSelected = 0
 const variants = document.getElementsByName('variant')
-for (let i = 0; i < variants.length; i++) {
+for (let i = 0, j = variants.length;i < j; i++) {
     variants[i].addEventListener('click', (event) => {
         const image = event.target.dataset.image
         const variantId = event.target.dataset.variant
