@@ -11,7 +11,7 @@
 {% style %}
     {% for color in colors %}
         {% assign colorObject = color | split: ":" %}
-        .bg_{{ colorObject[0] }} {
+        .bg_{{ colorObject[0] | strip }} {
             background: {{ colorObject[1] }};
         }
     {% endfor %}
@@ -19,12 +19,6 @@
 <div class="row">
     <div class="col-1"></div>
     <div class="col-md-7 col-xs-12">
-        {% for color in colors %}
-        {% assign colorObject = color | split: ":" %}
-            .bg_{{ colorObject[0] }} {
-                background: {{ colorObject[1] }};
-            }
-        {% endfor %}
             <img
                 class="product__image"
                 id="product-image"
