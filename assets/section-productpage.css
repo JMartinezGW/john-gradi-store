@@ -29,9 +29,3 @@
     border-radius: 50%;
     height: 25px;
 }
-
-.product__variant:checked + .product__variant__label {
-    background-color:#000;
-    border-color: #000;
-    color: #FFF;
-}
