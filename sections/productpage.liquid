@@ -70,6 +70,7 @@
             <div 
                 class="slider"
                 id="slider"
+                style="width: {{product.metafields.my_fields.slider.value | size}}00%;"
             >
                 {% assign slider = product.metafields.my_fields.slider.value %}
                 {% for itemSlider in slider %}
