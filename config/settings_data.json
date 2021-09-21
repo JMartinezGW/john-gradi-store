@@ -9,7 +9,7 @@
     "colors_background_2": "#F3F3F3",
     "type_header_font": "assistant_n4",
     "type_body_font": "assistant_n4",
-    "colors_products": "Verde: #27aa60\nRoja: #FF0000\nNegra: #000000\nBlanca: #FFFFFF",
+    "colors_products": "Verde: #27aa60\nRoja: #FF0000\nNegra: #000000\nBlanca: #FFFFFF\nGradiweb: #0a94f7",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
