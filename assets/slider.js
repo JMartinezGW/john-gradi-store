@@ -55,6 +55,7 @@ const prevSlide = () => {
 }
 
 btnRight.addEventListener('dblclick', () => {
+    console.log('dbclick detected')
     return false
 })
 
@@ -63,6 +64,7 @@ btnLeft.addEventListener('dblclick', () => {
 })
 
 btnRight.addEventListener('click', () => {
+    console.log('===')
     nextSlide()
 })
 
