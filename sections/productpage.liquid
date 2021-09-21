@@ -61,7 +61,7 @@
 {% assign images = product.metafields.my_fields.image.value %}
 {% assign titles = product.metafields.my_fields.title.value %}
 {% assign descriptions = product.metafields.my_fields.description.value %}
-{%- if images.size > 0 -%}
+{%- if images.size > 1 -%}
 <div class="row">
     <div class="col-7">
         <div class="container-slider">
@@ -82,6 +82,21 @@
                 <div class="slider__btn slider__btn--right" id="btn-right">&#62;</div>
                 <div class="slider__btn slider__btn--left" id="btn-left">&#60;</div>
             </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <div id="info">
+            Hola mundo
+        </div>
+    </div>
+</div>
+{%- else if images.size === 1 -%}
+<div class="row">
+    <div class="col-7">
+        <div class="container-slider">
+            <img 
+            src="{{ images[0].image }}"
+            class="slider__img">
         </div>
     </div>
     <div class="col-3">
