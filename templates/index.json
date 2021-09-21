@@ -118,6 +118,7 @@
     "featured_products",
     "collage",
     "video",
-    "multi_column"
+    "multi_column",
+    "banner"
   ]
 }
