@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="{{ 'section-main-page.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-rte.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<noscript>{{ 'section-main-page.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
+
+<!-- {{ 'section-productpage.css' | asset_url | stylesheet_tag }} -->
+
+<!-- <script src="{{ 'section-productpage.js' | asset_url }}" defer="defer"></script> -->
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+        Hola mundo
+    </div>
+    <div class="col-1"></div>
+</div>
+
+{% schema %}
+{% endschema %}

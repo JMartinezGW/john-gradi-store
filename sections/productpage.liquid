@@ -19,14 +19,14 @@
 {% endstyle %}
 <div class="row">
     <div class="col-1"></div>
-    <div class="col-md-7 col-xs-12">
+    <div class="col-md-7 col-xs-10">
             <img
                 class="product__image"
                 id="product-image"
                 src="{{ product | img_url: 'large' }}"
             >
     </div>
-    <div class="col-md-3 col-xs-12">
+    <div class="col-md-3 col-xs-10">
         <b>{{ product.title }}</b>
         <p id="product-price">{{ product.price | money }}</p>
         <b>
