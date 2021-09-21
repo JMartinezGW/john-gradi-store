@@ -83,6 +83,10 @@
     "video": {
       "type": "video",
       "settings": {}
+    },
+    "banner": {
+      "type": "banner",
+      "settings": {}
     }
   },
   "order": [
@@ -90,6 +94,7 @@
     "rich_text",
     "featured_products",
     "collage",
-    "video"
+    "video",
+    "banner"
   ]
 }
