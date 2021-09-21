@@ -83,7 +83,7 @@
     "video": {
       "type": "video",
       "settings": {}
-    },
+    }
   },
   "order": [
     "image_banner",
