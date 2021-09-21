@@ -54,22 +54,15 @@ const prevSlide = () => {
     }, 500)
 }
 
-btnRight.addEventListener('dblclick', () => {
-    console.log('dbclick detected')
-    return false
-})
-
-btnLeft.addEventListener('dblclick', () => {
-    return false
-})
-
 btnRight.addEventListener('click', (e) => {
-    e.preventDefault()
-    console.log('===')
-    nextSlide()
+    setTimeout(() => {
+        console.log('===')
+        nextSlide()
+    }, 500)
 })
 
 btnLeft.addEventListener('click',  (e) => {
-    e.preventDefault()
-    prevSlide()
+    setTimeout(() => {
+        prevSlide()
+    }, 500)
 })
