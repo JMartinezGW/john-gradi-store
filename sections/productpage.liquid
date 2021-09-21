@@ -1,9 +1,3 @@
-<link rel="stylesheet" href="{{ 'section-main-page.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-rte.css' | asset_url }}" media="print" onload="this.media='all'">
-
-<noscript>{{ 'section-main-page.css' | asset_url | stylesheet_tag }}</noscript>
-<noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
-
 {{ 'section-productpage.css' | asset_url | stylesheet_tag }}
 
 <script src="{{ 'section-productpage.js' | asset_url }}" defer="defer"></script>
@@ -98,9 +92,6 @@
 
 {% schema %}
 {
-  "name": "t:sections.main-page.name",
-  "tag": "section",
-  "class": "spaced-section",
   "settings": [
     {
         "type": "product",
