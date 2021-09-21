@@ -54,12 +54,18 @@ const prevSlide = () => {
     }, 500)
 }
 
-btnRight.addEventListener('click', (e) => {
-    e.preventDefault()
+btnRight.addEventListener('dblclick', () => {
+    return false
+})
+
+btnLeft.addEventListener('dblclick', () => {
+    return false
+})
+
+btnRight.addEventListener('click', () => {
     nextSlide()
 })
 
-btnLeft.addEventListener('click',  (e) => {
-    e.preventDefault()
+btnLeft.addEventListener('click',  () => {
     prevSlide()
 })
