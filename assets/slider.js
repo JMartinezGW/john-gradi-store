@@ -55,9 +55,12 @@ const prevSlide = () => {
 }
 
 btnRight.addEventListener('click', (e) => {
+    console.log('===')
+    console.log(e)
+    nextSlide()
+    e.target.style.pointerEvents = 'none'
     setTimeout(() => {
-        console.log('===')
-        nextSlide()
+        e.target.style.pointerEvents = ''
     }, 500)
 })
 
