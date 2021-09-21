@@ -91,20 +91,25 @@ const changeCartRequest = (item) => {
             })
         }).then((res) => res.json())
         .then((response) => {
-            for (let i = 0, j = response.items.length; i < j; i++) {
-                if (response.items[i].id === item.id) {
-                    if (response.items[i].quantity !== item.quantity) {
-                        alert('Not enough stock')
-                        item.quantity--
-                        changeHTMLProductAndMakeRequest(item)
-                    }
-                }
-            }
+            const items = response.items
+            validateQuantityItemsIntoCart(items, item)
         });
     } catch (error) {
         console.error(error)
     }
 }
+
+const validateQuantityItemsIntoCart = (items, item) => {
+    for (let i = 0, j = items.length; i < j; i++) {
+        if (items[i].id === item.id) {
+            if (items[i].quantity !== item.quantity) {
+                alert('Not enough stock')
+                item.quantity--
+                replaceHtmlProduct(item)
+            }
+        }
+    }
+} 
 
 const changeHTMLProductAndMakeRequest = (item) => {
     replaceHtmlProduct(item)
