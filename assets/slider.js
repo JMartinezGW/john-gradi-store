@@ -26,13 +26,13 @@ const btnRight = document.getElementById('btn-right')
 slider.insertAdjacentElement('afterbegin', sliderSectionLast)
 
 const nextSlide = () => {
-    if (sliderActual < sliderSection.length - 1) sliderActual++
-    else if(sliderActual === sliderSection.length - 1) sliderActual = 0
-    getInfomationSlide()
     const sliderSectionFirst = document.getElementsByClassName('slider__section')[0]
     slider.style.marginLeft = '-200%'
     slider.style.transition = 'all 0.5s'
     setTimeout(() => {
+        if (sliderActual < sliderSection.length - 1) sliderActual++
+        else if(sliderActual === sliderSection.length - 1) sliderActual = 0
+        getInfomationSlide()
         slider.style.transition = 'none'
         slider.insertAdjacentElement('beforeend', sliderSectionFirst)
         slider.style.marginLeft = '-100%'
@@ -41,13 +41,13 @@ const nextSlide = () => {
 
 const prevSlide = () => {
     let sliderSection = document.getElementsByClassName('slider__section')
-    if (sliderActual === 0) sliderActual = sliderSection.length - 1
-    else sliderActual--
-    getInfomationSlide()
     let sliderSectionLast = sliderSection[sliderSection.length - 1]
     slider.style.marginLeft = '0'
     slider.style.transition = 'all 0.5s'
     setTimeout(() => {
+        if (sliderActual === 0) sliderActual = sliderSection.length - 1
+        else sliderActual--
+        getInfomationSlide()
         slider.style.transition = 'none'
         slider.insertAdjacentElement('afterbegin', sliderSectionLast)
         slider.style.marginLeft = '-100%'
