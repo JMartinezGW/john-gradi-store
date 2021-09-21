@@ -25,7 +25,7 @@ const btnLeft = document.getElementById('btn-left')
 const btnRight = document.getElementById('btn-right')
 slider.insertAdjacentElement('afterbegin', sliderSectionLast)
 
-const nextSlide = (e) => {
+const nextSlide = () => {
     if (sliderActual < sliderSection.length - 1) sliderActual++
     else if(sliderActual === sliderSection.length - 1) sliderActual = 0
     getInfomationSlide()
@@ -37,10 +37,9 @@ const nextSlide = (e) => {
         slider.insertAdjacentElement('beforeend', sliderSectionFirst)
         slider.style.marginLeft = '-100%'
     }, 500)
-    e.preventDefault()
 }
 
-const prevSlide = (e) => {
+const prevSlide = () => {
     let sliderSection = document.getElementsByClassName('slider__section')
     if (sliderActual === 0) sliderActual = sliderSection.length - 1
     else sliderActual--
@@ -53,13 +52,14 @@ const prevSlide = (e) => {
         slider.insertAdjacentElement('afterbegin', sliderSectionLast)
         slider.style.marginLeft = '-100%'
     }, 500)
-    e.preventDefault()
 }
 
-btnRight.addEventListener('click', () => {
+btnRight.addEventListener('click', (e) => {
+    e.preventDefault()
     nextSlide()
 })
 
-btnLeft.addEventListener('click',  () => {
+btnLeft.addEventListener('click',  (e) => {
+    e.preventDefault()
     prevSlide()
 })
