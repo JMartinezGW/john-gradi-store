@@ -63,11 +63,13 @@ btnLeft.addEventListener('dblclick', () => {
     return false
 })
 
-btnRight.addEventListener('click', () => {
+btnRight.addEventListener('click', (e) => {
+    e.preventDefault()
     console.log('===')
     nextSlide()
 })
 
-btnLeft.addEventListener('click',  () => {
+btnLeft.addEventListener('click',  (e) => {
+    e.preventDefault()
     prevSlide()
 })
