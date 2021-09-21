@@ -84,17 +84,12 @@
       "type": "video",
       "settings": {}
     },
-    "banner": {
-      "type": "banner",
-      "settings": {}
-    }
   },
   "order": [
     "image_banner",
     "rich_text",
     "featured_products",
     "collage",
-    "video",
-    "banner"
+    "video"
   ]
 }
