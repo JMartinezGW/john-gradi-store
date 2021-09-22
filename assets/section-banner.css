@@ -3,12 +3,14 @@
     height: 300px;
     background: url('https://www.ktm.com/ktmgroup-storage/PHO_STAGE_250-duke-2018-overview_%23SALL_%23AEPI_%23V1.jpg');
     background-size: cover;
+    display: table;
 }
 
 .mybanner__text {
     font-size: 30px;
     color: white;
-    margin-top: 60px;
     width: 80%;
     word-wrap: break-word;
+    display: table-cell;
+    vertical-align: middle;
 }
