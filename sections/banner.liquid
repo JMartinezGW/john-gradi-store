@@ -1,11 +1,14 @@
-<!-- {{ 'section-banner.css' | asset_url | stylesheet_tag }} -->
+{{ 'section-banner.css' | asset_url | stylesheet_tag }}
 
 <script src="{{ 'section-banner.js' | asset_url }}" defer="defer"></script>
 <div class="page-width">
     <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
-            Somos una tienda de alto impacto con más de <b id="orders-text">0</b> órdenes entregadas y más de <b id="users-text">0</b> clientes a nivel mundial.
+            <div class="banner">
+                Somos una tienda de alto impacto con más de <b id="orders-text">0</b> órdenes entregadas<br>
+                y más de <b id="users-text">0</b> clientes a nivel mundial.
+            </div>
         </div>
         <div class="col-1"></div>
     </div>
