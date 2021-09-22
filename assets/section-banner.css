@@ -8,5 +8,7 @@
 .banner__text {
     font-size: 30px;
     color: white;
-    margin-top: 30px
+    margin-top: 30px;
+    width: 80%;
+    word-wrap: break-word;
 }
