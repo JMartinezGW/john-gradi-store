@@ -11,4 +11,16 @@ const getOrders = () => {
     }
 }
 
-window.onload = getOrders()
+const getUsers = () => {
+    try {
+        fetch(urlHeroku + '/users').then((res) => res.json())
+        .then((response) => {
+            console.log(response)
+        })
+    } catch (error) {
+        console.error(error)
+    }
+}
+
+
+window.onload = getUsers(); getOrders();
