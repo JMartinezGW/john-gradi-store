@@ -1,20 +1,20 @@
 const openMiniCart = () => {
     showOverlay()
     getProductsMiniCart()
-    document.getElementById('minicart').style.display = 'block';
+    document.getElementById('minicart').style.display = 'block'
 }
 
 const closeMiniCart = () => {
     hiddeOverlay()
-    document.getElementById('minicart').style.display = 'none';
+    document.getElementById('minicart').style.display = 'none'
 }
 
 const hiddeOverlay = () => {
-    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none'
 }
 
 const showOverlay = () => {
-    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('overlay').style.display = 'block'
 }
 
 const getProductsMiniCart = () => {
@@ -93,7 +93,7 @@ const changeCartRequest = (item) => {
         .then((response) => {
             const items = response.items
             validateQuantityItemsIntoCart(items, item)
-        });
+        })
     } catch (error) {
         console.error(error)
     }
