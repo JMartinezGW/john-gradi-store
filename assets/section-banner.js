@@ -1,6 +1,8 @@
+const urlHeroku = 'https://john-gradi-store.herokuapp.com'
+
 const getOrders = () => {
     try {
-        fetch('/orders').then((res) => res.json())
+        fetch(urlHeroku + '/orders').then((res) => res.json())
         .then((response) => {
             console.log(response)
         })
