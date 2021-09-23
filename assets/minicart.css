@@ -39,3 +39,8 @@
     color: rgb(var(--color-foreground));
     padding: 0;
 }
+
+#button-checkout {
+    display: flex;
+    justify-content: center;
+}
