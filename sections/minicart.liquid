@@ -9,9 +9,17 @@
     Minicart
   </h2>
   <div id="minicart-products"></div>
-  <button type="submit" id="checkout" class="cart__checkout-button button" name="checkout"{% if cart == empty %} disabled{% endif %} form="cart">
-    {{ 'sections.cart.checkout' | t }}
-  </button>
+  <center>
+    <button 
+      type="submit" 
+      id="checkout" 
+      class="cart__checkout-button button"
+      name="checkout"
+      form="cart"
+    >
+      {{ 'sections.cart.checkout' | t }}
+    </button>
+  </center>
 </div>
 
 {% schema %}
