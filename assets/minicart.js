@@ -27,6 +27,7 @@ const getProductsMiniCart = () => {
                 html += productProfile(items[i])
             }
             document.getElementById('minicart-products').innerHTML = html
+            document.getElementById('button-checkout').style.display = 'block'
         })
     } catch (error) {
         console.error(error)
@@ -100,12 +101,16 @@ const changeCartRequest = (item) => {
 }
 
 const validateQuantityItemsIntoCart = (items, item) => {
-    for (let i = 0, j = items.length; i < j; i++) {
-        if (items[i].id === item.id) {
-            if (items[i].quantity !== item.quantity) {
-                alert('Not enough stock')
-                item.quantity--
-                replaceHtmlProduct(item)
+    if (items.length === 0) {
+        document.getElementById('button-checkout').style.display = 'none'
+    } else {
+        for (let i = 0, j = items.length; i < j; i++) {
+            if (items[i].id === item.id) {
+                if (items[i].quantity !== item.quantity) {
+                    alert('Not enough stock')
+                    item.quantity--
+                    replaceHtmlProduct(item)
+                }
             }
         }
     }
