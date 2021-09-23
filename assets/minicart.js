@@ -27,7 +27,7 @@ const getProductsMiniCart = () => {
                 html += productProfile(items[i])
             }
             document.getElementById('minicart-products').innerHTML = html
-            document.getElementById('button-checkout').style.display = 'block'
+            document.getElementById('button-checkout').style.display = 'flex'
         })
     } catch (error) {
         console.error(error)
