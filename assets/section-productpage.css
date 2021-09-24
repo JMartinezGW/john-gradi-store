@@ -103,7 +103,7 @@
     border: 1px solid #888;
     width: 80%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 5% auto; /* 15% from the top and centered */
 }
 
 .mymodal__header {
@@ -128,4 +128,19 @@
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.product-bundle__variant {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+.product-bundle__variant__label {
+    display: inline-block;
+    padding: 5px 10px;
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+    border: 2px solid #444;
+    height: 25px;
 }

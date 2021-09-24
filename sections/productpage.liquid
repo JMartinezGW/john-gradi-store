@@ -59,12 +59,39 @@
 <div id="modal-bundle" class="mymodal">
     <div class="mymodal__content">
         <div class="mymodal__header">
-            <span class="mymodal__btn-close" id="close-modal">&times;</span>
+            <span class="mymodal__btn-close" id="close-modal-bundle">&times;</span>
             <h2 style="color: white;">Product Bundle</h2>
           </div>
         <div class="mymodal__body">
-            <p>Some text in the Modal Body</p>
-            <p>Some other text...</p>
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-md-7 col-xs-10">
+                        <img
+                            class="product__image"
+                            id="modal-bundle-image"
+                            src="{{ product | img_url: 'large' }}"
+                        >
+                </div>
+                <div class="col-md-3 col-xs-10">
+                    <b id="modal-bundle-title">{{ product.title }}</b>
+                    <p id="modal-bundle-price">{{ product.price | money }}</p>
+                    <b>
+                        Variantes: 
+                        <div id="modal-bundle-variants" class="product__variants">
+                        </div>
+                    </b>
+                    <br>
+                    <br>
+                    <a
+                        href="#"
+                        class="product__btn"
+                        id="modal-bundle-add-cart"
+                    >
+                        Add to Cart
+                    </a>
+                </div>
+                <div class="col-1"></div>
+            </div>
         </div>
     </div>
 </div>

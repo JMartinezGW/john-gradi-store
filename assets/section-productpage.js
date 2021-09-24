@@ -32,7 +32,7 @@ document.getElementById('btn-add-cart').addEventListener('click', async (event) 
             });
             if (request.status === 200) {
                 if (event.target.dataset.bundle && event.target.dataset.bundle.length > 0) {
-                    openDialogBundle(event.target.dataset.bundle)
+                    openModalBundle(event.target.dataset.bundle)
                 } else {
                     location.href="/cart"
                 }
@@ -47,18 +47,47 @@ document.getElementById('btn-add-cart').addEventListener('click', async (event) 
     }
 })
 
-const openDialogBundle = (productHandle) => {
+const openModalBundle = (productHandle) => {
     document.getElementById('modal-bundle').style.display = 'block'
     try {
         fetch(`/products/${productHandle}.js`).then((res) => res.json())
         .then((response) => {
-            console.log(response)
+            getModalBundleInformation(response)
         })
     } catch (error) {
         console.error(error)
     }
 }
 
-document.getElementById('close-modal').addEventListener('click', () => {
+const getModalBundleInformation = (item) => {
+    document.getElementById('modal-bundle-title').innerText = item.title
+    document.getElementById('modal-bundle-image').src = item.variants[0].featured_image.src
+    document.getElementById('modal-bundle-price').innerText = '$' + item.variants[0].price
+    document.getElementById('modal-bundle-variants').innerHTML = getVariantsBundle(item.variants)
+}
+
+document.getElementById('close-modal-bundle').addEventListener('click', () => {
     document.getElementById('modal-bundle').style.display = 'none'
 })
+
+const getVariantsBundle = (variants) => {
+    let html = ''
+    variants.forEach(variant => {
+        html += `
+            <input 
+                type="radio"
+                id="${variant.id}"
+                name="variant-bundle"
+                value="${variant.id}"
+                class="product-bundle__variant"
+                data-variant="${variant.id}"
+                data-image="${variant.image.featured_image.src}'"
+                data-price="{{${variant.price} | money}}"
+            >
+            <label for="${variant.id}" class="product-bundle__variant__label">
+                ${variant.title}
+            </label>
+        `
+    });
+    return html
+}
