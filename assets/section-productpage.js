@@ -81,7 +81,7 @@ const getVariantsBundle = (variants) => {
                 value="${variant.id}"
                 class="product-bundle__variant"
                 data-variant="${variant.id}"
-                data-image="${variant.image.featured_image.src}'"
+                data-image="${variant.featured_image.src}'"
                 data-price="{{${variant.price} | money}}"
             >
             <label for="${variant.id}" class="product-bundle__variant__label">
