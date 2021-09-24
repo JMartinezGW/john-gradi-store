@@ -112,7 +112,7 @@
     font-weight: bold;
 }
 
-.btn__close:hover, .btn__close:focus {
+.modal__btn-close:hover, .modal__btn-close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
