@@ -25,7 +25,10 @@ document.getElementById('btn-add-cart').addEventListener('click', async (event) 
                     items: [
                         {
                             quantity: 1,
-                            id: variantSelected
+                            id: variantSelected,
+                            properties: {
+                                bundle: event.target.dataset.bundle
+                            }
                         }
                     ]
                 })

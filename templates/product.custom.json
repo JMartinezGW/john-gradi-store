@@ -3,8 +3,7 @@
     "main": {
       "type": "productpage",
       "settings": {
-        "product": "",
-        "colors": "Verde: #27aa60\nRojo: #FF0000\nNegra: #000000\nBlanca: #FFFFFF"
+        "product": ""
       }
     }
   },
