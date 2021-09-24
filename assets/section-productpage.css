@@ -28,6 +28,7 @@
     font-size: 16px;
     border: 2px solid #444;
     border-radius: 50%;
+    height: 25px;
 }
 
 /* Slider */
@@ -142,7 +143,6 @@
     font-family: sans-serif, Arial;
     font-size: 16px;
     border: 2px solid #444;
-    height: 25px;
 }
 
 .product-bundle__variant:checked + .product-bundle__variant__label {
