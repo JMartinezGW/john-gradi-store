@@ -12,7 +12,6 @@ for (let i = 0, j = variants.length;i < j; i++) {
 }
 
 document.getElementById('btn-add-cart').addEventListener('click', async (event) => {
-    console.log(event.target.dataset.bundle)
     if (variantSelected === 0) {
         alert('First select a variant please')
     } else {
@@ -32,7 +31,11 @@ document.getElementById('btn-add-cart').addEventListener('click', async (event) 
                 })
             });
             if (request.status === 200) {
-                location.href="/cart"
+                if (event.target.dataset.bundle && event.target.dataset.bundle > 0) {
+                    openDialogBundle(event.target.dataset.bundle)
+                } else {
+                    location.href="/cart"
+                }
                 // openMiniCart()
             } else {
                 alert('Not enough stock')
@@ -42,4 +45,20 @@ document.getElementById('btn-add-cart').addEventListener('click', async (event) 
             console.error(error)
         }
     }
+})
+
+const openDialogBundle = (productHandle) => {
+    document.getElementById('modal-bundle').style.display = 'block'
+    try {
+        fetch(`/products/${productHandle}.js`).then((res) => res.json())
+        .then((response) => {
+            console.log(response)
+        })
+    } catch (error) {
+        console.error(error)
+    }
+}
+
+document.getElementById('close-modal').addEventListener('click', () => {
+    document.getElementById('modal-bundle').style.display = 'none'
 })
