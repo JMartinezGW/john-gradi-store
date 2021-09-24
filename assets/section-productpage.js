@@ -11,7 +11,8 @@ for (let i = 0, j = variants.length;i < j; i++) {
     });
 }
 
-document.getElementById('btn-add-cart').addEventListener('click', async () => {
+document.getElementById('btn-add-cart').addEventListener('click', async (event) => {
+    console.log(event.target.dataset.bundle)
     if (variantSelected === 0) {
         alert('First select a variant please')
     } else {
