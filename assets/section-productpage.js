@@ -94,7 +94,6 @@ const getVariantsBundle = (variants) => {
 }
 
 const selectVariantBundle = (event) => {
-    console.log('holaaa')
     const image = event.target.dataset.image
     const variantId = event.target.dataset.variant
     const price = event.target.dataset.price
@@ -102,3 +101,34 @@ const selectVariantBundle = (event) => {
     document.getElementById('modal-bundle-image').src = image
     document.getElementById('modal-bundle-price').innerText = '$' + price
 }
+
+document.getElementById('btn-add-cart-bundle').addEventListener('click', async (event) => {
+    if (variantSelected === 0) {
+        alert('First select a variant please')
+    } else {
+        try {
+            const request = await fetch('/cart/add.js', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    items: [
+                        {
+                            quantity: 1,
+                            id: variantSelected
+                        }
+                    ]
+                })
+            });
+            if (request.status === 200) {
+                location.href="/cart"
+            } else {
+                alert('Not enough stock')
+            }
+        } catch (error) {
+            console.log('error')
+            console.error(error)
+        }
+    }
+})
