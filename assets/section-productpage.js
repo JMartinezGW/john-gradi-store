@@ -31,7 +31,7 @@ document.getElementById('btn-add-cart').addEventListener('click', async (event) 
                 })
             });
             if (request.status === 200) {
-                if (event.target.dataset.bundle && event.target.dataset.bundle > 0) {
+                if (event.target.dataset.bundle && event.target.dataset.bundle.length > 0) {
                     openDialogBundle(event.target.dataset.bundle)
                 } else {
                     location.href="/cart"
