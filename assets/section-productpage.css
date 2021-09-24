@@ -82,7 +82,7 @@
     right: 10px;
 }
 
-.modal {
+.mymodal {
     display: none;
     position: fixed; /* Stay in place */
     z-index: 6; /* Sit on top */
@@ -96,7 +96,7 @@
 }
 
 /* Modal Content/Box */
-.modal__content {
+.mymodal__content {
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
@@ -105,14 +105,14 @@
 }
   
 /* The Close Button */
-.close {
+.mymodal__btn-close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.modal__btn-close:hover, .modal__btn-close:focus {
+.mymodal__btn-close:hover, .mymodal__btn-close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
