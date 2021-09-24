@@ -2,13 +2,18 @@
   "sections": {
     "main": {
       "type": "productpage",
-      "settings": [
-        {"product": ""},
-        {
-          "type": "textarea",
-          "id": "bundles",
-          "label": "Bundles"
-        }
+      "settings": [{
+        "product": ""
+      },{
+        "name": "Color products",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "colors_products",
+            "label": "Color products"
+          }
+        ]
+      }
       ]
     }
   },
