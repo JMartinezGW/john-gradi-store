@@ -91,3 +91,15 @@ const getVariantsBundle = (variants) => {
     });
     return html
 }
+
+const variants = document.getElementsByName('variant-bundle')
+for (let i = 0, j = variants.length;i < j; i++) {
+    variants[i].addEventListener('click', (event) => {
+        const image = event.target.dataset.image
+        const variantId = event.target.dataset.variant
+        const price = event.target.dataset.price
+        variantSelected = variantId
+        document.getElementById('modal-bundle-image').src = image
+        document.getElementById('modal-bundle-price').innerText = '$' + price
+    });
+}
