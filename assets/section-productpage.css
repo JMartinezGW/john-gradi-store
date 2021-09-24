@@ -146,6 +146,6 @@
 }
 
 .product-bundle__variant:checked + .product-bundle__variant__label {
-    background-color:#FFF;
-    color: black;
+    background-color:black;
+    color: white;
 }
