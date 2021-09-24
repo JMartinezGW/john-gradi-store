@@ -92,9 +92,9 @@ const getVariantsBundle = (variants) => {
     return html
 }
 
-const variants = document.getElementsByName('variant-bundle')
-for (let i = 0, j = variants.length;i < j; i++) {
-    variants[i].addEventListener('click', (event) => {
+const variantsBundle = document.getElementsByName('variant-bundle')
+for (let i = 0, j = variantsBundle.length;i < j; i++) {
+    variantsBundle[i].addEventListener('click', (event) => {
         const image = event.target.dataset.image
         const variantId = event.target.dataset.variant
         const price = event.target.dataset.price
