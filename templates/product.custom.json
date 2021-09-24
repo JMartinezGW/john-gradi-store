@@ -2,19 +2,10 @@
   "sections": {
     "main": {
       "type": "productpage",
-      "settings": [{
-        "product": ""
-      },{
-        "name": "Color products",
-        "settings": [
-          {
-            "type": "textarea",
-            "id": "colors_products",
-            "label": "Color products"
-          }
-        ]
+      "settings": {
+        "product": "",
+        "colors": "Verde: #27aa60\nRojo: #FF0000\nNegra: #000000\nBlanca: #FFFFFF"
       }
-      ]
     }
   },
   "order": [
