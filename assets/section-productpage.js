@@ -83,6 +83,7 @@ const getVariantsBundle = (variants) => {
                 data-variant="${variant.id}"
                 data-image="${variant.featured_image.src}'"
                 data-price="${variant.price}"
+                onclick="selectVariantBundle(event)"
             >
             <label for="${variant.id}" class="product-bundle__variant__label">
                 ${variant.title}
@@ -92,15 +93,12 @@ const getVariantsBundle = (variants) => {
     return html
 }
 
-const variantsBundle = document.getElementsByName('variant-bundle')
-for (let i = 0, j = variantsBundle.length;i < j; i++) {
-    variantsBundle[i].addEventListener('click', (event) => {
-        console.log('holaaa')
-        const image = event.target.dataset.image
-        const variantId = event.target.dataset.variant
-        const price = event.target.dataset.price
-        variantSelected = variantId
-        document.getElementById('modal-bundle-image').src = image
-        document.getElementById('modal-bundle-price').innerText = '$' + price
-    });
+const selectVariantBundle = (event) => {
+    console.log('holaaa')
+    const image = event.target.dataset.image
+    const variantId = event.target.dataset.variant
+    const price = event.target.dataset.price
+    variantSelected = variantId
+    document.getElementById('modal-bundle-image').src = image
+    document.getElementById('modal-bundle-price').innerText = '$' + price
 }
