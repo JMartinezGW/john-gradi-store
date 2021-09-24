@@ -95,6 +95,7 @@ const getVariantsBundle = (variants) => {
 const variantsBundle = document.getElementsByName('variant-bundle')
 for (let i = 0, j = variantsBundle.length;i < j; i++) {
     variantsBundle[i].addEventListener('click', (event) => {
+        console.log('holaaa')
         const image = event.target.dataset.image
         const variantId = event.target.dataset.variant
         const price = event.target.dataset.price
